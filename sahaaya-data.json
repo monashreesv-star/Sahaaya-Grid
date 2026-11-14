@@ -1,0 +1,2307 @@
+{
+  "users": [
+    {
+      "id": "usr-admin",
+      "username": "admin",
+      "passwordHash": "6bfa20655d1fbf8f5fe02dd75b9a3cd8eaad21560914b4e7d9b4a8b414db2260",
+      "name": "Control Room Lead (Arun K.)",
+      "role": "ORGANIZER",
+      "email": "organizer@sahaayagrid.in",
+      "phone": "+91 98765 43210"
+    },
+    {
+      "id": "anjali",
+      "username": "anjali",
+      "passwordHash": "95c9954bc854f2b898c3506d8cf49c8a48ef032ddaef0a16065c52a233b931a4",
+      "name": "Anjali Menon",
+      "role": "VOLUNTEER",
+      "skills": [
+        "Medical",
+        "Missing person",
+        "First aid"
+      ],
+      "zone": "AUD-01",
+      "available": true,
+      "currentIncidentId": null,
+      "phone": "+91 98765 00001"
+    },
+    {
+      "id": "arun",
+      "username": "arun",
+      "passwordHash": "95c9954bc854f2b898c3506d8cf49c8a48ef032ddaef0a16065c52a233b931a4",
+      "name": "Arun Kumar",
+      "role": "VOLUNTEER",
+      "skills": [
+        "Security",
+        "Crowding",
+        "Crowd control"
+      ],
+      "zone": "GATE-01",
+      "available": true,
+      "currentIncidentId": null,
+      "phone": "+91 98765 00002"
+    },
+    {
+      "id": "bala",
+      "username": "bala",
+      "passwordHash": "95c9954bc854f2b898c3506d8cf49c8a48ef032ddaef0a16065c52a233b931a4",
+      "name": "Bala Murugan",
+      "role": "VOLUNTEER",
+      "skills": [
+        "Fire / Smoke",
+        "Infrastructure",
+        "General"
+      ],
+      "zone": "STAGE-01",
+      "available": true,
+      "currentIncidentId": null,
+      "phone": "+91 98765 00003"
+    },
+    {
+      "id": "divya",
+      "username": "divya",
+      "passwordHash": "95c9954bc854f2b898c3506d8cf49c8a48ef032ddaef0a16065c52a233b931a4",
+      "name": "Divya Ramesh",
+      "role": "VOLUNTEER",
+      "skills": [
+        "General",
+        "Crowding",
+        "Missing person"
+      ],
+      "zone": "PARK-03",
+      "available": true,
+      "currentIncidentId": null,
+      "phone": "+91 98765 00004"
+    },
+    {
+      "id": "ravi",
+      "username": "ravi",
+      "passwordHash": "95c9954bc854f2b898c3506d8cf49c8a48ef032ddaef0a16065c52a233b931a4",
+      "name": "Ravi Prakash",
+      "role": "VOLUNTEER",
+      "skills": [
+        "Crowding",
+        "Infrastructure"
+      ],
+      "zone": "FOOD-05",
+      "available": false,
+      "currentIncidentId": null,
+      "phone": "+91 98765 00005"
+    },
+    {
+      "id": "meera",
+      "username": "meera",
+      "passwordHash": "95c9954bc854f2b898c3506d8cf49c8a48ef032ddaef0a16065c52a233b931a4",
+      "name": "Meera Nair",
+      "role": "VOLUNTEER",
+      "skills": [
+        "Infrastructure",
+        "Missing person"
+      ],
+      "zone": "ENT-02",
+      "available": true,
+      "currentIncidentId": null,
+      "phone": "+91 98765 00006"
+    },
+    {
+      "id": "kiran_6811",
+      "username": "kiran_6811",
+      "passwordHash": "95c9954bc854f2b898c3506d8cf49c8a48ef032ddaef0a16065c52a233b931a4",
+      "name": "Kiran Varma",
+      "role": "VOLUNTEER",
+      "skills": [
+        "Medical",
+        "First aid",
+        "Crowd control"
+      ],
+      "zone": "STAGE-01",
+      "available": true,
+      "currentIncidentId": null,
+      "phone": "+91 98765 00099",
+      "createdAt": 1787221386813
+    },
+    {
+      "id": "kiran_7623",
+      "username": "kiran_7623",
+      "passwordHash": "95c9954bc854f2b898c3506d8cf49c8a48ef032ddaef0a16065c52a233b931a4",
+      "name": "Kiran Varma",
+      "role": "VOLUNTEER",
+      "skills": [
+        "Medical",
+        "First aid",
+        "Crowd control"
+      ],
+      "zone": "STAGE-01",
+      "available": true,
+      "currentIncidentId": null,
+      "phone": "+91 98765 00099",
+      "createdAt": 1787222517624
+    }
+  ],
+  "zones": [
+    {
+      "id": "zone-food-07",
+      "code": "FOOD-07",
+      "name": "Food Court East",
+      "sector": "Food Court",
+      "active": true,
+      "description": "Near food stall clusters 1-8"
+    },
+    {
+      "id": "zone-food-08",
+      "code": "FOOD-08",
+      "name": "Food Court West",
+      "sector": "Food Court",
+      "active": true,
+      "description": "Beverage & seating pavilion"
+    },
+    {
+      "id": "zone-aud-02",
+      "code": "AUD-02",
+      "name": "Main Auditorium",
+      "sector": "Auditorium",
+      "active": true,
+      "description": "Grand hall seating & exits"
+    },
+    {
+      "id": "zone-gate-01",
+      "code": "GATE-01",
+      "name": "Main Entrance Gate",
+      "sector": "Entrance",
+      "active": true,
+      "description": "Security checkpoint & turnstiles"
+    },
+    {
+      "id": "zone-park-03",
+      "code": "PARK-03",
+      "name": "East Parking Lot",
+      "sector": "Parking",
+      "active": true,
+      "description": "Attendee vehicle parking area"
+    },
+    {
+      "id": "zone-stage-01",
+      "code": "STAGE-01",
+      "name": "Concert Stage",
+      "sector": "Stage",
+      "active": true,
+      "description": "Main stage front pit & backstage"
+    },
+    {
+      "id": "zone-first-aid-01",
+      "code": "FIRST-AID-01",
+      "name": "Medical Tent 1",
+      "sector": "First Aid",
+      "active": true,
+      "description": "Primary triage station"
+    },
+    {
+      "id": "zone-zone-10",
+      "code": "ZONE-10",
+      "name": "MAIN HALL 1",
+      "sector": "Auditorium",
+      "description": "",
+      "active": true,
+      "createdAt": 1787219413882
+    }
+  ],
+  "incidents": [
+    {
+      "id": "INC-20260820-6283",
+      "type": "Crowding",
+      "zone": "PARK-03",
+      "zoneName": "East Parking",
+      "priority": "high",
+      "state": "reported",
+      "note": "Gate blocked by cars | [Addl report]: Congestion growing | [Addl report]: Complete blockage",
+      "callback": "",
+      "photo": null,
+      "reportCount": 3,
+      "createdAt": 1787222517783,
+      "updatedAt": 1787222517816,
+      "assignedVolunteerId": null,
+      "assignmentId": null,
+      "resolvedAt": null,
+      "resolvedBy": null,
+      "resolutionNote": null,
+      "timeline": [
+        {
+          "at": 1787222517783,
+          "text": "Reported by civilian at PARK-03 (East Parking)"
+        },
+        {
+          "at": 1787222517783,
+          "text": "Priority calculated as MEDIUM"
+        },
+        {
+          "at": 1787222517802,
+          "text": "Report #2 clustered for Crowding at PARK-03. Priority: MEDIUM"
+        },
+        {
+          "at": 1787222517816,
+          "text": "Report #3 clustered for Crowding at PARK-03. Priority: HIGH"
+        }
+      ]
+    },
+    {
+      "id": "INC-20260820-9830",
+      "type": "Security",
+      "zone": "GATE-01",
+      "zoneName": "Main Entrance Gate",
+      "priority": "high",
+      "state": "reported",
+      "note": "Minor argument at gate 1.",
+      "callback": "",
+      "photo": null,
+      "reportCount": 1,
+      "createdAt": 1787222517727,
+      "updatedAt": 1787222517747,
+      "assignedVolunteerId": null,
+      "assignmentId": null,
+      "resolvedAt": null,
+      "resolvedBy": null,
+      "resolutionNote": null,
+      "timeline": [
+        {
+          "at": 1787222517727,
+          "text": "Reported by civilian at GATE-01 (Main Entrance Gate)"
+        },
+        {
+          "at": 1787222517727,
+          "text": "Priority calculated as HIGH"
+        },
+        {
+          "at": 1787222517747,
+          "text": "Assigned to Arun Kumar (Security, Crowding, Crowd control). 30-second acceptance timer started."
+        },
+        {
+          "at": 1787222517763,
+          "text": "Assignment to Arun Kumar expired after 30s timeout. Re-escalated to Command Center."
+        }
+      ]
+    },
+    {
+      "id": "INC-20260820-3559",
+      "type": "Medical",
+      "zone": "FOOD-07",
+      "zoneName": "Food Court East",
+      "priority": "high",
+      "state": "resolved",
+      "note": "Attendee collapsed near juice stall.",
+      "callback": "+91 98765 43210",
+      "photo": null,
+      "reportCount": 1,
+      "createdAt": 1787222517635,
+      "updatedAt": 1787222517710,
+      "assignedVolunteerId": "anjali",
+      "assignmentId": "ASG-27c5947e",
+      "resolvedAt": 1787222517710,
+      "resolvedBy": "Anjali Menon",
+      "resolutionNote": "Patient safely treated with ORS packet and resting.",
+      "timeline": [
+        {
+          "at": 1787222517635,
+          "text": "Reported by civilian at FOOD-07 (Food Court East)"
+        },
+        {
+          "at": 1787222517636,
+          "text": "Priority calculated as HIGH"
+        },
+        {
+          "at": 1787222517661,
+          "text": "Assigned to Anjali Menon (Medical, Missing person, First aid). 30-second acceptance timer started."
+        },
+        {
+          "at": 1787222517672,
+          "text": "Anjali Menon accepted the emergency task."
+        },
+        {
+          "at": 1787222517691,
+          "text": "Anjali Menon arrived on scene. Response in progress."
+        },
+        {
+          "at": 1787222517710,
+          "text": "Resolved by Anjali Menon: \"Patient safely treated with ORS packet and resting.\""
+        }
+      ]
+    },
+    {
+      "id": "INC-20260820-7806",
+      "type": "Crowding",
+      "zone": "PARK-03",
+      "zoneName": "East Parking",
+      "priority": "high",
+      "state": "reported",
+      "note": "Gate blocked by cars | [Addl report]: Congestion growing | [Addl report]: Complete blockage",
+      "callback": "",
+      "photo": null,
+      "reportCount": 3,
+      "createdAt": 1787221386977,
+      "updatedAt": 1787221771529,
+      "assignedVolunteerId": null,
+      "assignmentId": null,
+      "resolvedAt": null,
+      "resolvedBy": null,
+      "resolutionNote": null,
+      "timeline": [
+        {
+          "at": 1787221386977,
+          "text": "Reported by civilian at PARK-03 (East Parking)"
+        },
+        {
+          "at": 1787221386977,
+          "text": "Priority calculated as MEDIUM"
+        },
+        {
+          "at": 1787221386992,
+          "text": "Report #2 clustered for Crowding at PARK-03. Priority: MEDIUM"
+        },
+        {
+          "at": 1787221387013,
+          "text": "Report #3 clustered for Crowding at PARK-03. Priority: HIGH"
+        },
+        {
+          "at": 1787221771529,
+          "text": "Assigned to Divya Ramesh (General, Crowding, Missing person). 30-second acceptance timer started."
+        },
+        {
+          "at": 1787221801678,
+          "text": "Assignment to Divya Ramesh expired after 30s timeout. Re-escalated to Command Center."
+        }
+      ]
+    },
+    {
+      "id": "INC-20260820-7003",
+      "type": "Security",
+      "zone": "GATE-01",
+      "zoneName": "Main Entrance Gate",
+      "priority": "high",
+      "state": "reported",
+      "note": "Minor argument at gate 1.",
+      "callback": "",
+      "photo": null,
+      "reportCount": 1,
+      "createdAt": 1787221386920,
+      "updatedAt": 1787221386940,
+      "assignedVolunteerId": null,
+      "assignmentId": null,
+      "resolvedAt": null,
+      "resolvedBy": null,
+      "resolutionNote": null,
+      "timeline": [
+        {
+          "at": 1787221386920,
+          "text": "Reported by civilian at GATE-01 (Main Entrance Gate)"
+        },
+        {
+          "at": 1787221386920,
+          "text": "Priority calculated as HIGH"
+        },
+        {
+          "at": 1787221386940,
+          "text": "Assigned to Arun Kumar (Security, Crowding, Crowd control). 30-second acceptance timer started."
+        },
+        {
+          "at": 1787221386957,
+          "text": "Assignment to Arun Kumar expired after 30s timeout. Re-escalated to Command Center."
+        }
+      ]
+    },
+    {
+      "id": "INC-20260820-9335",
+      "type": "Medical",
+      "zone": "FOOD-07",
+      "zoneName": "Food Court East",
+      "priority": "high",
+      "state": "resolved",
+      "note": "Attendee collapsed near juice stall.",
+      "callback": "+91 98765 43210",
+      "photo": null,
+      "reportCount": 1,
+      "createdAt": 1787221386822,
+      "updatedAt": 1787221386901,
+      "assignedVolunteerId": "anjali",
+      "assignmentId": "ASG-f22148c1",
+      "resolvedAt": 1787221386901,
+      "resolvedBy": "Anjali Menon",
+      "resolutionNote": "Patient safely treated with ORS packet and resting.",
+      "timeline": [
+        {
+          "at": 1787221386822,
+          "text": "Reported by civilian at FOOD-07 (Food Court East)"
+        },
+        {
+          "at": 1787221386822,
+          "text": "Priority calculated as HIGH"
+        },
+        {
+          "at": 1787221386846,
+          "text": "Assigned to Anjali Menon (Medical, Missing person, First aid). 30-second acceptance timer started."
+        },
+        {
+          "at": 1787221386863,
+          "text": "Anjali Menon accepted the emergency task."
+        },
+        {
+          "at": 1787221386883,
+          "text": "Anjali Menon arrived on scene. Response in progress."
+        },
+        {
+          "at": 1787221386901,
+          "text": "Resolved by Anjali Menon: \"Patient safely treated with ORS packet and resting.\""
+        }
+      ]
+    },
+    {
+      "id": "INC-20260820-6509",
+      "type": "Medical",
+      "zone": "FOOD-07",
+      "zoneName": "Food Court East (Stalls 1-8)",
+      "priority": "high",
+      "state": "resolved",
+      "note": "",
+      "callback": "",
+      "photo": null,
+      "reportCount": 1,
+      "createdAt": 1787218997906,
+      "updatedAt": 1787219152825,
+      "assignedVolunteerId": "anjali",
+      "assignmentId": "ASG-c7517343",
+      "resolvedAt": 1787219152825,
+      "resolvedBy": "Anjali Menon",
+      "resolutionNote": "Emergency situation resolved safely.",
+      "timeline": [
+        {
+          "at": 1787218997906,
+          "text": "Reported by civilian at FOOD-07 (Food Court East (Stalls 1-8))"
+        },
+        {
+          "at": 1787218997906,
+          "text": "Priority calculated as HIGH"
+        },
+        {
+          "at": 1787219060951,
+          "text": "Assigned to Anjali Menon (Medical, Missing person, First aid). 30-second acceptance timer started."
+        },
+        {
+          "at": 1787219092742,
+          "text": "Assignment to Anjali Menon expired after 30s timeout. Re-escalated to Command Center."
+        },
+        {
+          "at": 1787219111348,
+          "text": "Assigned to Anjali Menon (Medical, Missing person, First aid). 30-second acceptance timer started."
+        },
+        {
+          "at": 1787219117054,
+          "text": "Anjali Menon accepted the emergency task."
+        },
+        {
+          "at": 1787219134996,
+          "text": "Anjali Menon arrived on scene. Response in progress."
+        },
+        {
+          "at": 1787219152825,
+          "text": "Resolved by Anjali Menon: \"Emergency situation resolved safely.\""
+        }
+      ]
+    },
+    {
+      "id": "INC-20260819-1711",
+      "type": "Medical",
+      "zone": "FOOD-07",
+      "zoneName": "Food Court East (Stalls 1-8)",
+      "priority": "high",
+      "state": "resolved",
+      "note": "hand bleeding",
+      "callback": "+91 8778197031",
+      "photo": null,
+      "reportCount": 1,
+      "createdAt": 1787153765616,
+      "updatedAt": 1787153861038,
+      "assignedVolunteerId": "anjali",
+      "assignmentId": "ASG-a7925dee",
+      "resolvedAt": 1787153861038,
+      "resolvedBy": "Anjali Menon",
+      "resolutionNote": "all fine",
+      "timeline": [
+        {
+          "at": 1787153765616,
+          "text": "Reported by civilian at FOOD-07 (Food Court East (Stalls 1-8))"
+        },
+        {
+          "at": 1787153765616,
+          "text": "Priority calculated as HIGH"
+        },
+        {
+          "at": 1787153813864,
+          "text": "Assigned to Anjali Menon (Medical, Missing person, First aid). 30-second acceptance timer started."
+        },
+        {
+          "at": 1787153837547,
+          "text": "Anjali Menon accepted the emergency task."
+        },
+        {
+          "at": 1787153851431,
+          "text": "Anjali Menon arrived on scene. Response in progress."
+        },
+        {
+          "at": 1787153861038,
+          "text": "Resolved by Anjali Menon: \"all fine\""
+        }
+      ]
+    },
+    {
+      "id": "INC-20260819-7912",
+      "type": "Missing person",
+      "zone": "STAGE-01",
+      "zoneName": "Main Concert Stage",
+      "priority": "high",
+      "state": "reported",
+      "note": "mala missing",
+      "callback": "+91 8778197033",
+      "photo": null,
+      "reportCount": 1,
+      "createdAt": 1787153366749,
+      "updatedAt": 1787153366749,
+      "assignedVolunteerId": null,
+      "assignmentId": null,
+      "resolvedAt": null,
+      "resolvedBy": null,
+      "resolutionNote": null,
+      "timeline": [
+        {
+          "at": 1787153366749,
+          "text": "Reported by civilian at STAGE-01 (Main Concert Stage)"
+        },
+        {
+          "at": 1787153366749,
+          "text": "Priority calculated as HIGH"
+        }
+      ]
+    },
+    {
+      "id": "INC-20260819-1747",
+      "type": "Fire / Smoke",
+      "zone": "FOOD-08",
+      "zoneName": "Food Court West (Seating)",
+      "priority": "critical",
+      "state": "resolved",
+      "note": "fire fire",
+      "callback": "+91 8778197032",
+      "photo": null,
+      "reportCount": 1,
+      "createdAt": 1787153290068,
+      "updatedAt": 1787219792479,
+      "assignedVolunteerId": "bala",
+      "assignmentId": "ASG-24413a68",
+      "resolvedAt": 1787219792479,
+      "resolvedBy": "Control Room Lead (Arun K.)",
+      "resolutionNote": "Resolved manually by Command Center Lead.",
+      "timeline": [
+        {
+          "at": 1787153290068,
+          "text": "Reported by civilian at FOOD-08 (Food Court West (Seating))"
+        },
+        {
+          "at": 1787153290068,
+          "text": "Priority calculated as CRITICAL"
+        },
+        {
+          "at": 1787219534928,
+          "text": "Assigned to Bala Murugan (Fire / Smoke, Infrastructure, General). 30-second acceptance timer started."
+        },
+        {
+          "at": 1787219560531,
+          "text": "Bala Murugan accepted the emergency task."
+        },
+        {
+          "at": 1787219564133,
+          "text": "Bala Murugan arrived on scene. Response in progress."
+        },
+        {
+          "at": 1787219792479,
+          "text": "Status updated to RESOLVED by Control Room Lead (Arun K.)."
+        }
+      ]
+    },
+    {
+      "id": "INC-20260819-6538",
+      "type": "Medical",
+      "zone": "FOOD-07",
+      "zoneName": "Food Court East (Stalls 1-8)",
+      "priority": "critical",
+      "state": "reported",
+      "note": "hand bleeding",
+      "callback": "+91 8778197031",
+      "photo": null,
+      "reportCount": 3,
+      "createdAt": 1787153201680,
+      "updatedAt": 1787153324828,
+      "assignedVolunteerId": null,
+      "assignmentId": null,
+      "resolvedAt": null,
+      "resolvedBy": null,
+      "resolutionNote": null,
+      "timeline": [
+        {
+          "at": 1787153201680,
+          "text": "Reported by civilian at FOOD-07 (Food Court East (Stalls 1-8))"
+        },
+        {
+          "at": 1787153201680,
+          "text": "Priority calculated as HIGH"
+        },
+        {
+          "at": 1787153228477,
+          "text": "Report #2 clustered for Medical at FOOD-07. Priority: HIGH"
+        },
+        {
+          "at": 1787153324828,
+          "text": "Report #3 clustered for Medical at FOOD-07. Priority: CRITICAL"
+        }
+      ]
+    },
+    {
+      "id": "INC-20260819-8926",
+      "type": "Medical",
+      "zone": "FOOD-07",
+      "zoneName": "Food Court East (Stalls 1-8)",
+      "priority": "high",
+      "state": "resolved",
+      "note": "bleeding in hand",
+      "callback": "+91 8778197031",
+      "photo": null,
+      "reportCount": 1,
+      "createdAt": 1787152477779,
+      "updatedAt": 1787152573886,
+      "assignedVolunteerId": "anjali",
+      "assignmentId": "ASG-541f76f4",
+      "resolvedAt": 1787152573886,
+      "resolvedBy": "Anjali Menon",
+      "resolutionNote": "all fine",
+      "timeline": [
+        {
+          "at": 1787152477779,
+          "text": "Reported by civilian at FOOD-07 (Food Court East (Stalls 1-8))"
+        },
+        {
+          "at": 1787152477779,
+          "text": "Priority calculated as HIGH"
+        },
+        {
+          "at": 1787152497614,
+          "text": "Assigned to Anjali Menon (Medical, Missing person, First aid). 30-second acceptance timer started."
+        },
+        {
+          "at": 1787152515692,
+          "text": "Anjali Menon accepted the emergency task."
+        },
+        {
+          "at": 1787152556568,
+          "text": "Anjali Menon arrived on scene. Response in progress."
+        },
+        {
+          "at": 1787152573886,
+          "text": "Resolved by Anjali Menon: \"all fine\""
+        }
+      ]
+    },
+    {
+      "id": "INC-20260819-5852",
+      "type": "Crowding",
+      "zone": "PARK-03",
+      "zoneName": "East Parking",
+      "priority": "high",
+      "state": "resolved",
+      "note": "Gate blocked by cars | [Addl report]: Congestion growing | [Addl report]: Complete blockage",
+      "callback": "",
+      "photo": null,
+      "reportCount": 3,
+      "createdAt": 1787152264344,
+      "updatedAt": 1787153022712,
+      "assignedVolunteerId": "divya",
+      "assignmentId": "ASG-18d52a3d",
+      "resolvedAt": 1787153022712,
+      "resolvedBy": "Divya Ramesh",
+      "resolutionNote": "Emergency situation resolved safely.",
+      "timeline": [
+        {
+          "at": 1787152264344,
+          "text": "Reported by civilian at PARK-03 (East Parking)"
+        },
+        {
+          "at": 1787152264344,
+          "text": "Priority calculated as MEDIUM"
+        },
+        {
+          "at": 1787152264362,
+          "text": "Report #2 clustered for Crowding at PARK-03. Priority: MEDIUM"
+        },
+        {
+          "at": 1787152264379,
+          "text": "Report #3 clustered for Crowding at PARK-03. Priority: HIGH"
+        },
+        {
+          "at": 1787152926774,
+          "text": "Assigned to Divya Ramesh (General, Crowding, Missing person). 30-second acceptance timer started."
+        },
+        {
+          "at": 1787152944233,
+          "text": "Divya Ramesh accepted the emergency task."
+        },
+        {
+          "at": 1787153021156,
+          "text": "Divya Ramesh arrived on scene. Response in progress."
+        },
+        {
+          "at": 1787153022712,
+          "text": "Resolved by Divya Ramesh: \"Emergency situation resolved safely.\""
+        }
+      ]
+    },
+    {
+      "id": "INC-20260819-9043",
+      "type": "Medical",
+      "zone": "FOOD-07",
+      "zoneName": "Food Court East",
+      "priority": "high",
+      "state": "resolved",
+      "note": "Attendee collapsed near juice stall.",
+      "callback": "+91 98765 43210",
+      "photo": null,
+      "reportCount": 1,
+      "createdAt": 1787152264238,
+      "updatedAt": 1787152264319,
+      "assignedVolunteerId": "anjali",
+      "assignmentId": "ASG-edfddfb9",
+      "resolvedAt": 1787152264319,
+      "resolvedBy": "Anjali Menon",
+      "resolutionNote": "Patient safely treated with ORS packet and resting.",
+      "timeline": [
+        {
+          "at": 1787152264238,
+          "text": "Reported by civilian at FOOD-07 (Food Court East)"
+        },
+        {
+          "at": 1787152264238,
+          "text": "Priority calculated as HIGH"
+        },
+        {
+          "at": 1787152264254,
+          "text": "Assigned to Anjali Menon (Medical, Missing person, First aid). 30-second acceptance timer started."
+        },
+        {
+          "at": 1787152264272,
+          "text": "Anjali Menon accepted the emergency task."
+        },
+        {
+          "at": 1787152264293,
+          "text": "Anjali Menon arrived on scene. Response in progress."
+        },
+        {
+          "at": 1787152264319,
+          "text": "Resolved by Anjali Menon: \"Patient safely treated with ORS packet and resting.\""
+        }
+      ]
+    },
+    {
+      "id": "INC-20260819-3675",
+      "type": "Medical",
+      "zone": "FOOD-07",
+      "zoneName": "Food Court East (Stalls 1-8)",
+      "priority": "high",
+      "state": "resolved",
+      "note": "hand bleeding",
+      "callback": "+91 8778197031",
+      "photo": null,
+      "reportCount": 1,
+      "createdAt": 1787150351512,
+      "updatedAt": 1787153059730,
+      "assignedVolunteerId": "anjali",
+      "assignmentId": "ASG-3c6eee2c",
+      "resolvedAt": 1787153059730,
+      "resolvedBy": "Anjali Menon",
+      "resolutionNote": "all fine",
+      "timeline": [
+        {
+          "at": 1787150351512,
+          "text": "Reported by civilian at FOOD-07 (Food Court East (Stalls 1-8))"
+        },
+        {
+          "at": 1787150351512,
+          "text": "Priority calculated as HIGH"
+        },
+        {
+          "at": 1787150385454,
+          "text": "Assigned to Anjali Menon (Medical, Missing person, First aid). 30-second acceptance timer started."
+        },
+        {
+          "at": 1787150417590,
+          "text": "Assignment to Anjali Menon expired after 30s timeout. Re-escalated to Command Center."
+        },
+        {
+          "at": 1787150422590,
+          "text": "Assigned to Anjali Menon (Medical, Missing person, First aid). 30-second acceptance timer started."
+        },
+        {
+          "at": 1787150453722,
+          "text": "Assignment to Anjali Menon expired after 30s timeout. Re-escalated to Command Center."
+        },
+        {
+          "at": 1787150458714,
+          "text": "Assigned to Anjali Menon (Medical, Missing person, First aid). 30-second acceptance timer started."
+        },
+        {
+          "at": 1787150489833,
+          "text": "Assignment to Anjali Menon expired after 30s timeout. Re-escalated to Command Center."
+        },
+        {
+          "at": 1787150494406,
+          "text": "Assigned to Anjali Menon (Medical, Missing person, First aid). 30-second acceptance timer started."
+        },
+        {
+          "at": 1787150525941,
+          "text": "Assignment to Anjali Menon expired after 30s timeout. Re-escalated to Command Center."
+        },
+        {
+          "at": 1787150542117,
+          "text": "Assigned to Anjali Menon (Medical, Missing person, First aid). 30-second acceptance timer started."
+        },
+        {
+          "at": 1787150574096,
+          "text": "Assignment to Anjali Menon expired after 30s timeout. Re-escalated to Command Center."
+        },
+        {
+          "at": 1787153011886,
+          "text": "Assigned to Anjali Menon (Medical, Missing person, First aid). 30-second acceptance timer started."
+        },
+        {
+          "at": 1787153033631,
+          "text": "Anjali Menon accepted the emergency task."
+        },
+        {
+          "at": 1787153040486,
+          "text": "Anjali Menon arrived on scene. Response in progress."
+        },
+        {
+          "at": 1787153059730,
+          "text": "Resolved by Anjali Menon: \"all fine\""
+        }
+      ]
+    },
+    {
+      "id": "INC-20260819-8750",
+      "type": "Crowding",
+      "zone": "PARK-03",
+      "zoneName": "East Parking",
+      "priority": "high",
+      "state": "reported",
+      "note": "Gate blocked by cars | [Addl report]: Congestion growing | [Addl report]: Complete blockage",
+      "callback": "",
+      "photo": null,
+      "reportCount": 3,
+      "createdAt": 1787149964231,
+      "updatedAt": 1787149964249,
+      "assignedVolunteerId": null,
+      "assignmentId": null,
+      "resolvedAt": null,
+      "resolvedBy": null,
+      "resolutionNote": null,
+      "timeline": [
+        {
+          "at": 1787149964231,
+          "text": "Reported by civilian at PARK-03 (East Parking)"
+        },
+        {
+          "at": 1787149964231,
+          "text": "Priority calculated as MEDIUM"
+        },
+        {
+          "at": 1787149964235,
+          "text": "Report #2 clustered for Crowding at PARK-03. Priority: MEDIUM"
+        },
+        {
+          "at": 1787149964249,
+          "text": "Report #3 clustered for Crowding at PARK-03. Priority: HIGH"
+        }
+      ]
+    },
+    {
+      "id": "INC-20260819-8567",
+      "type": "Medical",
+      "zone": "FOOD-07",
+      "zoneName": "Food Court East",
+      "priority": "high",
+      "state": "resolved",
+      "note": "Attendee collapsed near juice stall.",
+      "callback": "+91 98765 43210",
+      "photo": null,
+      "reportCount": 1,
+      "createdAt": 1787149964147,
+      "updatedAt": 1787149964213,
+      "assignedVolunteerId": "anjali",
+      "assignmentId": "ASG-c8b2ce19",
+      "resolvedAt": 1787149964213,
+      "resolvedBy": "Anjali Menon",
+      "resolutionNote": "Patient safely treated with ORS packet and resting.",
+      "timeline": [
+        {
+          "at": 1787149964147,
+          "text": "Reported by civilian at FOOD-07 (Food Court East)"
+        },
+        {
+          "at": 1787149964147,
+          "text": "Priority calculated as HIGH"
+        },
+        {
+          "at": 1787149964159,
+          "text": "Assigned to Anjali Menon (Medical, Missing person, First aid). 30-second acceptance timer started."
+        },
+        {
+          "at": 1787149964174,
+          "text": "Anjali Menon accepted the emergency task."
+        },
+        {
+          "at": 1787149964196,
+          "text": "Anjali Menon arrived on scene. Response in progress."
+        },
+        {
+          "at": 1787149964213,
+          "text": "Resolved by Anjali Menon: \"Patient safely treated with ORS packet and resting.\""
+        }
+      ]
+    },
+    {
+      "id": "INC-20260819-0012",
+      "type": "Medical",
+      "zone": "AUD-02",
+      "zoneName": "Main Auditorium",
+      "priority": "high",
+      "state": "resolved",
+      "note": "Attendee feels faint near the west exit.",
+      "callback": "+91 98765 11111",
+      "photo": null,
+      "reportCount": 1,
+      "createdAt": 1787134590193,
+      "updatedAt": 1787141463571,
+      "assignedVolunteerId": "anjali",
+      "assignmentId": "ASG-SEED-01",
+      "resolvedAt": 1787141463571,
+      "resolvedBy": "Anjali Menon",
+      "resolutionNote": "Administered oral rehydration salts. Attendee resting comfortably in medical tent.",
+      "timeline": [
+        {
+          "at": 1787134590193,
+          "text": "Reported by civilian at AUD-02"
+        },
+        {
+          "at": 1787134620000,
+          "text": "Assigned to Anjali Menon (Medical responder)"
+        },
+        {
+          "at": 1787134635000,
+          "text": "Anjali Menon accepted emergency dispatch"
+        },
+        {
+          "at": 1787134800000,
+          "text": "Anjali Menon arrived on scene (In progress)"
+        },
+        {
+          "at": 1787141463571,
+          "text": "Incident resolved by Anjali Menon"
+        }
+      ]
+    },
+    {
+      "id": "INC-20260819-0028",
+      "type": "Crowding",
+      "zone": "FOOD-07",
+      "zoneName": "Food Court East",
+      "priority": "medium",
+      "state": "reported",
+      "note": "Long queues blocking passage between stalls 4 and 5.",
+      "callback": "",
+      "photo": null,
+      "reportCount": 2,
+      "createdAt": 1787141421576,
+      "updatedAt": 1787142686737,
+      "assignedVolunteerId": null,
+      "assignmentId": null,
+      "resolvedAt": null,
+      "resolvedBy": null,
+      "resolutionNote": null,
+      "timeline": [
+        {
+          "at": 1787141421576,
+          "text": "Reported by civilian at FOOD-07"
+        },
+        {
+          "at": 1787141480000,
+          "text": "2nd report clustered from FOOD-07. Priority: MEDIUM"
+        },
+        {
+          "at": 1787142686737,
+          "text": "Assigned to Arun Kumar (Security & Crowd Control)"
+        },
+        {
+          "at": 1787149957376,
+          "text": "Assignment to Arun Kumar expired after 30s timeout. Re-escalated to Command Center."
+        }
+      ]
+    }
+  ],
+  "assignments": [
+    {
+      "id": "ASG-4683957a",
+      "incidentId": "INC-20260820-9830",
+      "volunteerId": "arun",
+      "status": "expired",
+      "assignedAt": 1787222517747,
+      "expiresAt": 1787222547747,
+      "acceptedAt": null,
+      "declinedAt": null,
+      "startedAt": null,
+      "completedAt": null,
+      "expiredAt": 1787222517763
+    },
+    {
+      "id": "ASG-27c5947e",
+      "incidentId": "INC-20260820-3559",
+      "volunteerId": "anjali",
+      "status": "completed",
+      "assignedAt": 1787222517661,
+      "expiresAt": 1787222547661,
+      "acceptedAt": 1787222517672,
+      "declinedAt": null,
+      "startedAt": 1787222517691,
+      "completedAt": 1787222517710
+    },
+    {
+      "id": "ASG-769875d8",
+      "incidentId": "INC-20260820-7806",
+      "volunteerId": "divya",
+      "status": "expired",
+      "assignedAt": 1787221771529,
+      "expiresAt": 1787221801529,
+      "acceptedAt": null,
+      "declinedAt": null,
+      "startedAt": null,
+      "completedAt": null,
+      "expiredAt": 1787221801678
+    },
+    {
+      "id": "ASG-966c3d5f",
+      "incidentId": "INC-20260820-7003",
+      "volunteerId": "arun",
+      "status": "expired",
+      "assignedAt": 1787221386940,
+      "expiresAt": 1787221416940,
+      "acceptedAt": null,
+      "declinedAt": null,
+      "startedAt": null,
+      "completedAt": null,
+      "expiredAt": 1787221386957
+    },
+    {
+      "id": "ASG-f22148c1",
+      "incidentId": "INC-20260820-9335",
+      "volunteerId": "anjali",
+      "status": "completed",
+      "assignedAt": 1787221386846,
+      "expiresAt": 1787221416846,
+      "acceptedAt": 1787221386863,
+      "declinedAt": null,
+      "startedAt": 1787221386883,
+      "completedAt": 1787221386901
+    },
+    {
+      "id": "ASG-24413a68",
+      "incidentId": "INC-20260819-1747",
+      "volunteerId": "bala",
+      "status": "in_progress",
+      "assignedAt": 1787219534928,
+      "expiresAt": 1787219564928,
+      "acceptedAt": 1787219560531,
+      "declinedAt": null,
+      "startedAt": 1787219564133,
+      "completedAt": null
+    },
+    {
+      "id": "ASG-c7517343",
+      "incidentId": "INC-20260820-6509",
+      "volunteerId": "anjali",
+      "status": "completed",
+      "assignedAt": 1787219111348,
+      "expiresAt": 1787219141348,
+      "acceptedAt": 1787219117054,
+      "declinedAt": null,
+      "startedAt": 1787219134996,
+      "completedAt": 1787219152825
+    },
+    {
+      "id": "ASG-a8b1e07c",
+      "incidentId": "INC-20260820-6509",
+      "volunteerId": "anjali",
+      "status": "expired",
+      "assignedAt": 1787219060951,
+      "expiresAt": 1787219090951,
+      "acceptedAt": null,
+      "declinedAt": null,
+      "startedAt": null,
+      "completedAt": null,
+      "expiredAt": 1787219092742
+    },
+    {
+      "id": "ASG-a7925dee",
+      "incidentId": "INC-20260819-1711",
+      "volunteerId": "anjali",
+      "status": "completed",
+      "assignedAt": 1787153813864,
+      "expiresAt": 1787153843864,
+      "acceptedAt": 1787153837547,
+      "declinedAt": null,
+      "startedAt": 1787153851431,
+      "completedAt": 1787153861038
+    },
+    {
+      "id": "ASG-3c6eee2c",
+      "incidentId": "INC-20260819-3675",
+      "volunteerId": "anjali",
+      "status": "completed",
+      "assignedAt": 1787153011886,
+      "expiresAt": 1787153041886,
+      "acceptedAt": 1787153033631,
+      "declinedAt": null,
+      "startedAt": 1787153040486,
+      "completedAt": 1787153059730
+    },
+    {
+      "id": "ASG-18d52a3d",
+      "incidentId": "INC-20260819-5852",
+      "volunteerId": "divya",
+      "status": "completed",
+      "assignedAt": 1787152926774,
+      "expiresAt": 1787152956774,
+      "acceptedAt": 1787152944233,
+      "declinedAt": null,
+      "startedAt": 1787153021156,
+      "completedAt": 1787153022712
+    },
+    {
+      "id": "ASG-541f76f4",
+      "incidentId": "INC-20260819-8926",
+      "volunteerId": "anjali",
+      "status": "completed",
+      "assignedAt": 1787152497614,
+      "expiresAt": 1787152527614,
+      "acceptedAt": 1787152515692,
+      "declinedAt": null,
+      "startedAt": 1787152556568,
+      "completedAt": 1787152573886
+    },
+    {
+      "id": "ASG-edfddfb9",
+      "incidentId": "INC-20260819-9043",
+      "volunteerId": "anjali",
+      "status": "completed",
+      "assignedAt": 1787152264254,
+      "expiresAt": 1787152294254,
+      "acceptedAt": 1787152264272,
+      "declinedAt": null,
+      "startedAt": 1787152264293,
+      "completedAt": 1787152264319
+    },
+    {
+      "id": "ASG-c53fbbba",
+      "incidentId": "INC-20260819-3675",
+      "volunteerId": "anjali",
+      "status": "expired",
+      "assignedAt": 1787150542117,
+      "expiresAt": 1787150572117,
+      "acceptedAt": null,
+      "declinedAt": null,
+      "startedAt": null,
+      "completedAt": null,
+      "expiredAt": 1787150574096
+    },
+    {
+      "id": "ASG-54c4a27a",
+      "incidentId": "INC-20260819-3675",
+      "volunteerId": "anjali",
+      "status": "expired",
+      "assignedAt": 1787150494406,
+      "expiresAt": 1787150524406,
+      "acceptedAt": null,
+      "declinedAt": null,
+      "startedAt": null,
+      "completedAt": null,
+      "expiredAt": 1787150525941
+    },
+    {
+      "id": "ASG-c666c06d",
+      "incidentId": "INC-20260819-3675",
+      "volunteerId": "anjali",
+      "status": "expired",
+      "assignedAt": 1787150458714,
+      "expiresAt": 1787150488714,
+      "acceptedAt": null,
+      "declinedAt": null,
+      "startedAt": null,
+      "completedAt": null,
+      "expiredAt": 1787150489833
+    },
+    {
+      "id": "ASG-65bc3202",
+      "incidentId": "INC-20260819-3675",
+      "volunteerId": "anjali",
+      "status": "expired",
+      "assignedAt": 1787150422590,
+      "expiresAt": 1787150452590,
+      "acceptedAt": null,
+      "declinedAt": null,
+      "startedAt": null,
+      "completedAt": null,
+      "expiredAt": 1787150453722
+    },
+    {
+      "id": "ASG-a5d2577a",
+      "incidentId": "INC-20260819-3675",
+      "volunteerId": "anjali",
+      "status": "expired",
+      "assignedAt": 1787150385454,
+      "expiresAt": 1787150415454,
+      "acceptedAt": null,
+      "declinedAt": null,
+      "startedAt": null,
+      "completedAt": null,
+      "expiredAt": 1787150417590
+    },
+    {
+      "id": "ASG-c8b2ce19",
+      "incidentId": "INC-20260819-8567",
+      "volunteerId": "anjali",
+      "status": "completed",
+      "assignedAt": 1787149964159,
+      "expiresAt": 1787149994159,
+      "acceptedAt": 1787149964174,
+      "declinedAt": null,
+      "startedAt": 1787149964196,
+      "completedAt": 1787149964213
+    },
+    {
+      "id": "ASG-SEED-02",
+      "incidentId": "INC-20260819-0028",
+      "volunteerId": "arun",
+      "status": "expired",
+      "assignedAt": 1787142686737,
+      "expiresAt": 1787142716737,
+      "acceptedAt": null,
+      "declinedAt": null,
+      "startedAt": null,
+      "completedAt": null,
+      "expiredAt": 1787149957376
+    }
+  ],
+  "events": [
+    {
+      "id": "7ca6e4aa-11d9-4729-921b-73352b138242",
+      "type": "INCIDENT_CLUSTERED",
+      "actorId": "civilian",
+      "actorName": "Civilian",
+      "message": "Clustered report #3 for Crowding at PARK-03. Priority is HIGH.",
+      "incidentId": "INC-20260820-6283",
+      "metadata": {},
+      "at": 1787222517816
+    },
+    {
+      "id": "2fc2dc3f-0744-434c-a8c0-d6326bcdc8bb",
+      "type": "INCIDENT_CLUSTERED",
+      "actorId": "civilian",
+      "actorName": "Civilian",
+      "message": "Clustered report #2 for Crowding at PARK-03. Priority is MEDIUM.",
+      "incidentId": "INC-20260820-6283",
+      "metadata": {},
+      "at": 1787222517802
+    },
+    {
+      "id": "4043d6e2-11d5-4596-887c-446653dce85c",
+      "type": "INCIDENT_CREATED",
+      "actorId": "civilian",
+      "actorName": "Civilian",
+      "message": "New MEDIUM-priority Crowding report at PARK-03.",
+      "incidentId": "INC-20260820-6283",
+      "metadata": {},
+      "at": 1787222517783
+    },
+    {
+      "id": "3cb1e82b-88ce-414b-bca4-b257171395cf",
+      "type": "TASK_EXPIRED",
+      "actorId": "system",
+      "actorName": "Timeout Engine",
+      "message": "30s acceptance timer expired for Arun Kumar on incident INC-20260820-9830. Escalated to Organizer.",
+      "incidentId": "INC-20260820-9830",
+      "metadata": {},
+      "at": 1787222517763
+    },
+    {
+      "id": "25f10db9-e636-48de-ae59-33adfc4a0eba",
+      "type": "TASK_ASSIGNED",
+      "actorId": "admin",
+      "actorName": "Control Room Lead (Arun K.)",
+      "message": "Arun Kumar was assigned to Security at GATE-01 by Control Room Lead (Arun K.). 30s timer started.",
+      "incidentId": "INC-20260820-9830",
+      "metadata": {},
+      "at": 1787222517747
+    },
+    {
+      "id": "6ec9cd4f-6636-44f8-a4b4-b44916d08848",
+      "type": "INCIDENT_CREATED",
+      "actorId": "civilian",
+      "actorName": "Civilian",
+      "message": "New HIGH-priority Security report at GATE-01.",
+      "incidentId": "INC-20260820-9830",
+      "metadata": {},
+      "at": 1787222517727
+    },
+    {
+      "id": "3dba1632-f1d8-425f-8c80-f53b31f5b64f",
+      "type": "INCIDENT_RESOLVED",
+      "actorId": "anjali",
+      "actorName": "Anjali Menon",
+      "message": "Medical at FOOD-07 RESOLVED by Anjali Menon. Note: Patient safely treated with ORS packet and resting.",
+      "incidentId": "INC-20260820-3559",
+      "metadata": {},
+      "at": 1787222517710
+    },
+    {
+      "id": "f2057992-4035-4af0-8ccf-7daf3d4e4aac",
+      "type": "TASK_STARTED",
+      "actorId": "anjali",
+      "actorName": "Anjali Menon",
+      "message": "Anjali Menon started ON-SCENE response for Medical at FOOD-07.",
+      "incidentId": "INC-20260820-3559",
+      "metadata": {},
+      "at": 1787222517691
+    },
+    {
+      "id": "a3daee8b-bc1a-4844-a9a7-710688bc1163",
+      "type": "TASK_ACCEPTED",
+      "actorId": "anjali",
+      "actorName": "Anjali Menon",
+      "message": "Anjali Menon ACCEPTED response for Medical at FOOD-07.",
+      "incidentId": "INC-20260820-3559",
+      "metadata": {},
+      "at": 1787222517672
+    },
+    {
+      "id": "f8f21575-a78b-4a0d-99ec-44420f97c527",
+      "type": "TASK_ASSIGNED",
+      "actorId": "admin",
+      "actorName": "Control Room Lead (Arun K.)",
+      "message": "Anjali Menon was assigned to Medical at FOOD-07 by Control Room Lead (Arun K.). 30s timer started.",
+      "incidentId": "INC-20260820-3559",
+      "metadata": {},
+      "at": 1787222517661
+    },
+    {
+      "id": "2e3638bd-952d-465c-a468-9afd57a96ceb",
+      "type": "INCIDENT_CREATED",
+      "actorId": "civilian",
+      "actorName": "Civilian",
+      "message": "New HIGH-priority Medical report at FOOD-07.",
+      "incidentId": "INC-20260820-3559",
+      "metadata": {},
+      "at": 1787222517636
+    },
+    {
+      "id": "b976824f-e93d-4482-8a05-2b4f3bdc3bf6",
+      "type": "AUTH_SUCCESS",
+      "actorId": "kiran_7623",
+      "actorName": "Kiran Varma",
+      "message": "User \"Kiran Varma\" (VOLUNTEER) logged in successfully.",
+      "incidentId": null,
+      "metadata": {},
+      "at": 1787222517633
+    },
+    {
+      "id": "49d5d2f5-ece5-42ff-8648-688be497f166",
+      "type": "VOLUNTEER_REGISTERED",
+      "actorId": "admin",
+      "actorName": "Control Room Lead (Arun K.)",
+      "message": "New volunteer \"Kiran Varma\" (@kiran_7623) registered in zone STAGE-01 by Control Room Lead (Arun K.).",
+      "incidentId": null,
+      "metadata": {},
+      "at": 1787222517624
+    },
+    {
+      "id": "fed41140-c125-4131-8e63-6e15f45e209f",
+      "type": "AUTH_SUCCESS",
+      "actorId": "anjali",
+      "actorName": "Anjali Menon",
+      "message": "User \"Anjali Menon\" (VOLUNTEER) logged in successfully.",
+      "incidentId": null,
+      "metadata": {},
+      "at": 1787222517619
+    },
+    {
+      "id": "5e0dddb3-b960-4eee-99e0-dcc6e16d6ccb",
+      "type": "AUTH_SUCCESS",
+      "actorId": "usr-admin",
+      "actorName": "Control Room Lead (Arun K.)",
+      "message": "User \"Control Room Lead (Arun K.)\" (ORGANIZER) logged in successfully.",
+      "incidentId": null,
+      "metadata": {},
+      "at": 1787222517617
+    },
+    {
+      "id": "3fee6fe3-d04e-4cfa-8861-cf0a88b6462e",
+      "type": "AUTH_FAILED",
+      "actorId": "admin",
+      "actorName": "admin",
+      "message": "Failed login attempt for user \"admin\".",
+      "incidentId": null,
+      "metadata": {},
+      "at": 1787222517614
+    },
+    {
+      "id": "78a280d7-d93b-4fea-84cb-eed09db2e0e6",
+      "type": "TASK_EXPIRED",
+      "actorId": "system",
+      "actorName": "Timeout Engine",
+      "message": "30s acceptance timer expired for Divya Ramesh on incident INC-20260820-7806. Escalated to Organizer.",
+      "incidentId": "INC-20260820-7806",
+      "metadata": {},
+      "at": 1787221801678
+    },
+    {
+      "id": "7e7a0da1-4e63-475f-933f-eed3c7385c62",
+      "type": "AUTH_SUCCESS",
+      "actorId": "divya",
+      "actorName": "Divya Ramesh",
+      "message": "User \"Divya Ramesh\" (VOLUNTEER) logged in successfully.",
+      "incidentId": null,
+      "metadata": {},
+      "at": 1787221778533
+    },
+    {
+      "id": "865c7c7f-b723-4aed-906c-2a4a5ffded1b",
+      "type": "AUTH_SUCCESS",
+      "actorId": "anjali",
+      "actorName": "Anjali Menon",
+      "message": "User \"Anjali Menon\" (VOLUNTEER) logged in successfully.",
+      "incidentId": null,
+      "metadata": {},
+      "at": 1787221774875
+    },
+    {
+      "id": "524d2cc9-9839-41a0-a45a-339bd2566f4b",
+      "type": "TASK_ASSIGNED",
+      "actorId": "admin",
+      "actorName": "Control Room Lead (Arun K.)",
+      "message": "Divya Ramesh was assigned to Crowding at PARK-03 by Control Room Lead (Arun K.). 30s timer started.",
+      "incidentId": "INC-20260820-7806",
+      "metadata": {},
+      "at": 1787221771529
+    },
+    {
+      "id": "8d8b583f-39f7-4452-a81e-f556541de9b0",
+      "type": "AUTH_SUCCESS",
+      "actorId": "usr-admin",
+      "actorName": "Control Room Lead (Arun K.)",
+      "message": "User \"Control Room Lead (Arun K.)\" (ORGANIZER) logged in successfully.",
+      "incidentId": null,
+      "metadata": {},
+      "at": 1787221704073
+    },
+    {
+      "id": "4822dcb6-aeca-4119-a5e6-dd66a8e78d62",
+      "type": "INCIDENT_CLUSTERED",
+      "actorId": "civilian",
+      "actorName": "Civilian",
+      "message": "Clustered report #3 for Crowding at PARK-03. Priority is HIGH.",
+      "incidentId": "INC-20260820-7806",
+      "metadata": {},
+      "at": 1787221387013
+    },
+    {
+      "id": "1d8444f3-6d6c-42cf-b46c-b9fe786060c0",
+      "type": "INCIDENT_CLUSTERED",
+      "actorId": "civilian",
+      "actorName": "Civilian",
+      "message": "Clustered report #2 for Crowding at PARK-03. Priority is MEDIUM.",
+      "incidentId": "INC-20260820-7806",
+      "metadata": {},
+      "at": 1787221386992
+    },
+    {
+      "id": "c1bdc8c8-7c28-4605-8d76-22fa93dd8b8b",
+      "type": "INCIDENT_CREATED",
+      "actorId": "civilian",
+      "actorName": "Civilian",
+      "message": "New MEDIUM-priority Crowding report at PARK-03.",
+      "incidentId": "INC-20260820-7806",
+      "metadata": {},
+      "at": 1787221386977
+    },
+    {
+      "id": "1fa6fbfe-92bf-45f4-aa13-540423f74a89",
+      "type": "TASK_EXPIRED",
+      "actorId": "system",
+      "actorName": "Timeout Engine",
+      "message": "30s acceptance timer expired for Arun Kumar on incident INC-20260820-7003. Escalated to Organizer.",
+      "incidentId": "INC-20260820-7003",
+      "metadata": {},
+      "at": 1787221386957
+    },
+    {
+      "id": "2f0c9e23-b115-4613-be00-0696c4a3f948",
+      "type": "TASK_ASSIGNED",
+      "actorId": "admin",
+      "actorName": "Control Room Lead (Arun K.)",
+      "message": "Arun Kumar was assigned to Security at GATE-01 by Control Room Lead (Arun K.). 30s timer started.",
+      "incidentId": "INC-20260820-7003",
+      "metadata": {},
+      "at": 1787221386940
+    },
+    {
+      "id": "d2d774c4-81ed-417c-a8aa-4f7037fe5f63",
+      "type": "INCIDENT_CREATED",
+      "actorId": "civilian",
+      "actorName": "Civilian",
+      "message": "New HIGH-priority Security report at GATE-01.",
+      "incidentId": "INC-20260820-7003",
+      "metadata": {},
+      "at": 1787221386920
+    },
+    {
+      "id": "14188510-5001-491f-b279-5069125e4ad0",
+      "type": "INCIDENT_RESOLVED",
+      "actorId": "anjali",
+      "actorName": "Anjali Menon",
+      "message": "Medical at FOOD-07 RESOLVED by Anjali Menon. Note: Patient safely treated with ORS packet and resting.",
+      "incidentId": "INC-20260820-9335",
+      "metadata": {},
+      "at": 1787221386901
+    },
+    {
+      "id": "c66dea9a-feba-4fe1-b3ab-7017a7d86e89",
+      "type": "TASK_STARTED",
+      "actorId": "anjali",
+      "actorName": "Anjali Menon",
+      "message": "Anjali Menon started ON-SCENE response for Medical at FOOD-07.",
+      "incidentId": "INC-20260820-9335",
+      "metadata": {},
+      "at": 1787221386883
+    },
+    {
+      "id": "b669d21a-f6d7-4b1a-9ac8-486de4f1fbaa",
+      "type": "TASK_ACCEPTED",
+      "actorId": "anjali",
+      "actorName": "Anjali Menon",
+      "message": "Anjali Menon ACCEPTED response for Medical at FOOD-07.",
+      "incidentId": "INC-20260820-9335",
+      "metadata": {},
+      "at": 1787221386863
+    },
+    {
+      "id": "43bb88c8-f08f-470f-b677-c597a3d27b49",
+      "type": "TASK_ASSIGNED",
+      "actorId": "admin",
+      "actorName": "Control Room Lead (Arun K.)",
+      "message": "Anjali Menon was assigned to Medical at FOOD-07 by Control Room Lead (Arun K.). 30s timer started.",
+      "incidentId": "INC-20260820-9335",
+      "metadata": {},
+      "at": 1787221386846
+    },
+    {
+      "id": "f9be2c1f-23f2-458b-891e-1e36e766459e",
+      "type": "INCIDENT_CREATED",
+      "actorId": "civilian",
+      "actorName": "Civilian",
+      "message": "New HIGH-priority Medical report at FOOD-07.",
+      "incidentId": "INC-20260820-9335",
+      "metadata": {},
+      "at": 1787221386823
+    },
+    {
+      "id": "f9516630-ea02-45b5-85ca-bcba0ac454d7",
+      "type": "AUTH_SUCCESS",
+      "actorId": "kiran_6811",
+      "actorName": "Kiran Varma",
+      "message": "User \"Kiran Varma\" (VOLUNTEER) logged in successfully.",
+      "incidentId": null,
+      "metadata": {},
+      "at": 1787221386819
+    },
+    {
+      "id": "29fe3332-7b20-4538-8c10-980f5dafee77",
+      "type": "VOLUNTEER_REGISTERED",
+      "actorId": "admin",
+      "actorName": "Control Room Lead (Arun K.)",
+      "message": "New volunteer \"Kiran Varma\" (@kiran_6811) registered in zone STAGE-01 by Control Room Lead (Arun K.).",
+      "incidentId": null,
+      "metadata": {},
+      "at": 1787221386813
+    },
+    {
+      "id": "52d60356-0b31-45bd-8acc-711645b050b9",
+      "type": "AUTH_SUCCESS",
+      "actorId": "anjali",
+      "actorName": "Anjali Menon",
+      "message": "User \"Anjali Menon\" (VOLUNTEER) logged in successfully.",
+      "incidentId": null,
+      "metadata": {},
+      "at": 1787221386805
+    },
+    {
+      "id": "4e83f586-c576-4624-bdbe-639586edf4b9",
+      "type": "AUTH_SUCCESS",
+      "actorId": "usr-admin",
+      "actorName": "Control Room Lead (Arun K.)",
+      "message": "User \"Control Room Lead (Arun K.)\" (ORGANIZER) logged in successfully.",
+      "incidentId": null,
+      "metadata": {},
+      "at": 1787221386802
+    },
+    {
+      "id": "8391e92d-a0ba-4370-8352-bcf535f7b66e",
+      "type": "AUTH_FAILED",
+      "actorId": "admin",
+      "actorName": "admin",
+      "message": "Failed login attempt for user \"admin\".",
+      "incidentId": null,
+      "metadata": {},
+      "at": 1787221386799
+    },
+    {
+      "id": "7ebeaebd-393b-4b71-92b1-679bfb13bb5a",
+      "type": "STATUS_CHANGE",
+      "actorId": "admin",
+      "actorName": "Control Room Lead (Arun K.)",
+      "message": "Incident INC-20260819-1747 (Fire / Smoke at FOOD-08) changed to RESOLVED by Control Room Lead (Arun K.).",
+      "incidentId": "INC-20260819-1747",
+      "metadata": {},
+      "at": 1787219792479
+    },
+    {
+      "id": "3ced7b65-9a53-44b5-8f32-12718589a6cc",
+      "type": "AVAILABILITY_CHANGE",
+      "actorId": "anjali",
+      "actorName": "Anjali Menon",
+      "message": "Anjali Menon is now AVAILABLE.",
+      "incidentId": null,
+      "metadata": {},
+      "at": 1787219740074
+    },
+    {
+      "id": "d7b82c06-894d-425d-99bc-a1c4e787c024",
+      "type": "AVAILABILITY_CHANGE",
+      "actorId": "anjali",
+      "actorName": "Anjali Menon",
+      "message": "Anjali Menon is now OFFLINE.",
+      "incidentId": null,
+      "metadata": {},
+      "at": 1787219739244
+    },
+    {
+      "id": "a645702a-9aee-436c-a75a-27f6f3748353",
+      "type": "AVAILABILITY_CHANGE",
+      "actorId": "admin",
+      "actorName": "Control Room Lead (Arun K.)",
+      "message": "Anjali Menon is now AVAILABLE.",
+      "incidentId": null,
+      "metadata": {},
+      "at": 1787219621667
+    },
+    {
+      "id": "8f7415a4-3479-488e-8845-42995b2283ac",
+      "type": "AVAILABILITY_CHANGE",
+      "actorId": "admin",
+      "actorName": "Control Room Lead (Arun K.)",
+      "message": "Anjali Menon is now OFFLINE.",
+      "incidentId": null,
+      "metadata": {},
+      "at": 1787219619320
+    },
+    {
+      "id": "3021ddc4-146a-41fe-aa47-d71f5f0eda9f",
+      "type": "TASK_STARTED",
+      "actorId": "bala",
+      "actorName": "Bala Murugan",
+      "message": "Bala Murugan started ON-SCENE response for Fire / Smoke at FOOD-08.",
+      "incidentId": "INC-20260819-1747",
+      "metadata": {},
+      "at": 1787219564133
+    },
+    {
+      "id": "6acb9d1b-2896-4120-a0fd-01449b57ccc0",
+      "type": "TASK_ACCEPTED",
+      "actorId": "bala",
+      "actorName": "Bala Murugan",
+      "message": "Bala Murugan ACCEPTED response for Fire / Smoke at FOOD-08.",
+      "incidentId": "INC-20260819-1747",
+      "metadata": {},
+      "at": 1787219560531
+    },
+    {
+      "id": "8d13ab74-54b7-43b6-907f-6aa71d069bf9",
+      "type": "AUTH_SUCCESS",
+      "actorId": "bala",
+      "actorName": "Bala Murugan",
+      "message": "User \"Bala Murugan\" (VOLUNTEER) logged in successfully.",
+      "incidentId": null,
+      "metadata": {},
+      "at": 1787219555703
+    },
+    {
+      "id": "93b394db-bb8e-485c-a35e-96ade6396902",
+      "type": "TASK_ASSIGNED",
+      "actorId": "admin",
+      "actorName": "Control Room Lead (Arun K.)",
+      "message": "Bala Murugan was assigned to Fire / Smoke at FOOD-08 by Control Room Lead (Arun K.). 30s timer started.",
+      "incidentId": "INC-20260819-1747",
+      "metadata": {},
+      "at": 1787219534928
+    },
+    {
+      "id": "9f17e6a7-6348-47ab-af8d-a7f340542108",
+      "type": "ZONE_CREATED",
+      "actorId": "admin",
+      "actorName": "Control Room Lead (Arun K.)",
+      "message": "New venue zone \"ZONE-10 — MAIN HALL 1\" created by Control Room Lead (Arun K.).",
+      "incidentId": null,
+      "metadata": {},
+      "at": 1787219413882
+    },
+    {
+      "id": "4f5c7bae-2636-4fb9-9c12-efde2853ae4a",
+      "type": "INCIDENT_RESOLVED",
+      "actorId": "anjali",
+      "actorName": "Anjali Menon",
+      "message": "Medical at FOOD-07 RESOLVED by Anjali Menon. Note: Emergency situation resolved safely.",
+      "incidentId": "INC-20260820-6509",
+      "metadata": {},
+      "at": 1787219152825
+    },
+    {
+      "id": "5e4e55c7-3ad3-4dc1-9747-0778067d15d9",
+      "type": "TASK_STARTED",
+      "actorId": "anjali",
+      "actorName": "Anjali Menon",
+      "message": "Anjali Menon started ON-SCENE response for Medical at FOOD-07.",
+      "incidentId": "INC-20260820-6509",
+      "metadata": {},
+      "at": 1787219134996
+    },
+    {
+      "id": "8540d56e-98ec-43d6-9562-0e7ffc6f279c",
+      "type": "TASK_ACCEPTED",
+      "actorId": "anjali",
+      "actorName": "Anjali Menon",
+      "message": "Anjali Menon ACCEPTED response for Medical at FOOD-07.",
+      "incidentId": "INC-20260820-6509",
+      "metadata": {},
+      "at": 1787219117054
+    },
+    {
+      "id": "fa56b254-3fc0-4251-bdbe-fa4100feb008",
+      "type": "TASK_ASSIGNED",
+      "actorId": "admin",
+      "actorName": "Control Room Lead (Arun K.)",
+      "message": "Anjali Menon was assigned to Medical at FOOD-07 by Control Room Lead (Arun K.). 30s timer started.",
+      "incidentId": "INC-20260820-6509",
+      "metadata": {},
+      "at": 1787219111348
+    },
+    {
+      "id": "b9b2a1ac-a7c2-49f3-83bd-099755beb90b",
+      "type": "TASK_EXPIRED",
+      "actorId": "system",
+      "actorName": "Timeout Engine",
+      "message": "30s acceptance timer expired for Anjali Menon on incident INC-20260820-6509 (Medical at FOOD-07). Escalated to Organizer.",
+      "incidentId": "INC-20260820-6509",
+      "metadata": {},
+      "at": 1787219092742
+    },
+    {
+      "id": "1ff8baba-72c1-4b43-a5e2-6ba621ba717c",
+      "type": "AUTH_SUCCESS",
+      "actorId": "anjali",
+      "actorName": "Anjali Menon",
+      "message": "User \"Anjali Menon\" (VOLUNTEER) logged in successfully.",
+      "incidentId": null,
+      "metadata": {},
+      "at": 1787219076596
+    },
+    {
+      "id": "5a92867e-7756-4589-8844-007034c310cc",
+      "type": "AUTH_LOGOUT",
+      "actorId": "anjali",
+      "actorName": "Anjali Menon",
+      "message": "User \"Anjali Menon\" logged out.",
+      "incidentId": null,
+      "metadata": {},
+      "at": 1787219069947
+    },
+    {
+      "id": "605d0cbe-dcaf-4cf9-8b7e-3174b57cd307",
+      "type": "AUTH_SUCCESS",
+      "actorId": "anjali",
+      "actorName": "Anjali Menon",
+      "message": "User \"Anjali Menon\" (VOLUNTEER) logged in successfully.",
+      "incidentId": null,
+      "metadata": {},
+      "at": 1787219065761
+    },
+    {
+      "id": "091b5c44-4e0f-4313-9f24-88cf6242a32e",
+      "type": "TASK_ASSIGNED",
+      "actorId": "admin",
+      "actorName": "Control Room Lead (Arun K.)",
+      "message": "Anjali Menon was assigned to Medical at FOOD-07 by Control Room Lead (Arun K.). 30s timer started.",
+      "incidentId": "INC-20260820-6509",
+      "metadata": {},
+      "at": 1787219060951
+    },
+    {
+      "id": "506a4196-9aec-4c2f-9705-0954ad2d3a76",
+      "type": "AUTH_SUCCESS",
+      "actorId": "usr-admin",
+      "actorName": "Control Room Lead (Arun K.)",
+      "message": "User \"Control Room Lead (Arun K.)\" (ORGANIZER) logged in successfully.",
+      "incidentId": null,
+      "metadata": {},
+      "at": 1787219044807
+    },
+    {
+      "id": "afea8fdd-f7b8-44a6-9d6c-d27fa0466503",
+      "type": "INCIDENT_CREATED",
+      "actorId": "civilian",
+      "actorName": "Civilian",
+      "message": "New HIGH-priority Medical report at FOOD-07.",
+      "incidentId": "INC-20260820-6509",
+      "metadata": {},
+      "at": 1787218997910
+    },
+    {
+      "id": "4ae557fc-0b65-428c-8c73-0d6f0c3bf0b0",
+      "type": "INCIDENT_RESOLVED",
+      "actorId": "anjali",
+      "actorName": "Anjali Menon",
+      "message": "Medical at FOOD-07 RESOLVED by Anjali Menon. Note: all fine",
+      "incidentId": "INC-20260819-1711",
+      "metadata": {},
+      "at": 1787153861038
+    },
+    {
+      "id": "3bab06b7-6259-4c16-9cfe-31b32ef5114b",
+      "type": "TASK_STARTED",
+      "actorId": "anjali",
+      "actorName": "Anjali Menon",
+      "message": "Anjali Menon started ON-SCENE response for Medical at FOOD-07.",
+      "incidentId": "INC-20260819-1711",
+      "metadata": {},
+      "at": 1787153851431
+    },
+    {
+      "id": "b9170f78-ecd9-4738-826c-1c00f919f897",
+      "type": "TASK_ACCEPTED",
+      "actorId": "anjali",
+      "actorName": "Anjali Menon",
+      "message": "Anjali Menon ACCEPTED response for Medical at FOOD-07.",
+      "incidentId": "INC-20260819-1711",
+      "metadata": {},
+      "at": 1787153837547
+    },
+    {
+      "id": "ed329976-f264-4a82-bd57-8883866fd4a7",
+      "type": "AUTH_SUCCESS",
+      "actorId": "anjali",
+      "actorName": "Anjali Menon",
+      "message": "User \"Anjali Menon\" (VOLUNTEER) logged in successfully.",
+      "incidentId": null,
+      "metadata": {},
+      "at": 1787153829565
+    },
+    {
+      "id": "dc3e2562-7159-4730-b1a4-d119421ec740",
+      "type": "AUTH_LOGOUT",
+      "actorId": "anjali",
+      "actorName": "Anjali Menon",
+      "message": "User \"Anjali Menon\" logged out.",
+      "incidentId": null,
+      "metadata": {},
+      "at": 1787153825254
+    },
+    {
+      "id": "81658bd5-2149-497a-be4e-6dda1d92978a",
+      "type": "TASK_ASSIGNED",
+      "actorId": "admin",
+      "actorName": "Control Room Lead (Arun K.)",
+      "message": "Anjali Menon was assigned to Medical at FOOD-07 by Control Room Lead (Arun K.). 30s timer started.",
+      "incidentId": "INC-20260819-1711",
+      "metadata": {},
+      "at": 1787153813864
+    },
+    {
+      "id": "c227fab5-a11f-45d5-97b9-f375b6090db9",
+      "type": "AUTH_SUCCESS",
+      "actorId": "usr-admin",
+      "actorName": "Control Room Lead (Arun K.)",
+      "message": "User \"Control Room Lead (Arun K.)\" (ORGANIZER) logged in successfully.",
+      "incidentId": null,
+      "metadata": {},
+      "at": 1787153789256
+    },
+    {
+      "id": "72656f28-d3ab-4859-af2e-a21bd3405822",
+      "type": "AUTH_LOGOUT",
+      "actorId": "admin",
+      "actorName": "Control Room Lead (Arun K.)",
+      "message": "User \"Control Room Lead (Arun K.)\" logged out.",
+      "incidentId": null,
+      "metadata": {},
+      "at": 1787153779867
+    },
+    {
+      "id": "b8ec02b5-0321-4af2-bfc9-37a728c701bf",
+      "type": "INCIDENT_CREATED",
+      "actorId": "civilian",
+      "actorName": "Civilian",
+      "message": "New HIGH-priority Medical report at FOOD-07.",
+      "incidentId": "INC-20260819-1711",
+      "metadata": {},
+      "at": 1787153765616
+    },
+    {
+      "id": "8edaffea-ff8b-4d6d-aa97-3655a5c97de5",
+      "type": "INCIDENT_CREATED",
+      "actorId": "civilian",
+      "actorName": "Civilian",
+      "message": "New HIGH-priority Missing person report at STAGE-01.",
+      "incidentId": "INC-20260819-7912",
+      "metadata": {},
+      "at": 1787153366749
+    },
+    {
+      "id": "35a5ce9b-24c2-4d46-90b2-acd5f6682a0b",
+      "type": "INCIDENT_CLUSTERED",
+      "actorId": "civilian",
+      "actorName": "Civilian",
+      "message": "Clustered report #3 for Medical at FOOD-07. Priority is CRITICAL.",
+      "incidentId": "INC-20260819-6538",
+      "metadata": {},
+      "at": 1787153324828
+    },
+    {
+      "id": "c4c0e3c4-d057-4680-8558-ccf6f2604516",
+      "type": "INCIDENT_CREATED",
+      "actorId": "civilian",
+      "actorName": "Civilian",
+      "message": "New CRITICAL-priority Fire / Smoke report at FOOD-08.",
+      "incidentId": "INC-20260819-1747",
+      "metadata": {},
+      "at": 1787153290068
+    },
+    {
+      "id": "25e64a0b-4c93-4acf-909b-c4850a008ec4",
+      "type": "INCIDENT_CLUSTERED",
+      "actorId": "civilian",
+      "actorName": "Civilian",
+      "message": "Clustered report #2 for Medical at FOOD-07. Priority is HIGH.",
+      "incidentId": "INC-20260819-6538",
+      "metadata": {},
+      "at": 1787153228477
+    },
+    {
+      "id": "c098d14e-dbd8-43c2-9847-f8fb5f98f1a1",
+      "type": "INCIDENT_CREATED",
+      "actorId": "civilian",
+      "actorName": "Civilian",
+      "message": "New HIGH-priority Medical report at FOOD-07.",
+      "incidentId": "INC-20260819-6538",
+      "metadata": {},
+      "at": 1787153201680
+    },
+    {
+      "id": "b5da4f43-8981-4c18-954e-5fce18dd1828",
+      "type": "INCIDENT_RESOLVED",
+      "actorId": "anjali",
+      "actorName": "Anjali Menon",
+      "message": "Medical at FOOD-07 RESOLVED by Anjali Menon. Note: all fine",
+      "incidentId": "INC-20260819-3675",
+      "metadata": {},
+      "at": 1787153059730
+    },
+    {
+      "id": "1622788b-7b39-44b6-850b-428bee29987a",
+      "type": "TASK_STARTED",
+      "actorId": "anjali",
+      "actorName": "Anjali Menon",
+      "message": "Anjali Menon started ON-SCENE response for Medical at FOOD-07.",
+      "incidentId": "INC-20260819-3675",
+      "metadata": {},
+      "at": 1787153040486
+    },
+    {
+      "id": "ff9d0bf8-b62d-4815-919d-16ab50dfad51",
+      "type": "TASK_ACCEPTED",
+      "actorId": "anjali",
+      "actorName": "Anjali Menon",
+      "message": "Anjali Menon ACCEPTED response for Medical at FOOD-07.",
+      "incidentId": "INC-20260819-3675",
+      "metadata": {},
+      "at": 1787153033631
+    },
+    {
+      "id": "aaecb85f-7f58-42a3-b237-061ebc593009",
+      "type": "AUTH_SUCCESS",
+      "actorId": "anjali",
+      "actorName": "Anjali Menon",
+      "message": "User \"Anjali Menon\" (VOLUNTEER) logged in successfully.",
+      "incidentId": null,
+      "metadata": {},
+      "at": 1787153026042
+    },
+    {
+      "id": "23c1972b-8fce-4a33-a509-05509cc83f67",
+      "type": "AUTH_LOGOUT",
+      "actorId": "divya",
+      "actorName": "Divya Ramesh",
+      "message": "User \"Divya Ramesh\" logged out.",
+      "incidentId": null,
+      "metadata": {},
+      "at": 1787153024112
+    },
+    {
+      "id": "bbb8664b-2c62-4b2d-8e6b-f9e50095ff54",
+      "type": "INCIDENT_RESOLVED",
+      "actorId": "divya",
+      "actorName": "Divya Ramesh",
+      "message": "Crowding at PARK-03 RESOLVED by Divya Ramesh. Note: Emergency situation resolved safely.",
+      "incidentId": "INC-20260819-5852",
+      "metadata": {},
+      "at": 1787153022712
+    },
+    {
+      "id": "3d36c772-3b95-48ac-8863-009de5d742fe",
+      "type": "TASK_STARTED",
+      "actorId": "divya",
+      "actorName": "Divya Ramesh",
+      "message": "Divya Ramesh started ON-SCENE response for Crowding at PARK-03.",
+      "incidentId": "INC-20260819-5852",
+      "metadata": {},
+      "at": 1787153021156
+    },
+    {
+      "id": "e9b51578-4abf-449f-82cc-f8c6a8a7bc4e",
+      "type": "TASK_ASSIGNED",
+      "actorId": "admin",
+      "actorName": "Control Room Lead (Arun K.)",
+      "message": "Anjali Menon was assigned to Medical at FOOD-07 by Control Room Lead (Arun K.). 30s timer started.",
+      "incidentId": "INC-20260819-3675",
+      "metadata": {},
+      "at": 1787153011886
+    },
+    {
+      "id": "f249626e-a684-4e26-8890-b2c9331be462",
+      "type": "TASK_ACCEPTED",
+      "actorId": "divya",
+      "actorName": "Divya Ramesh",
+      "message": "Divya Ramesh ACCEPTED response for Crowding at PARK-03.",
+      "incidentId": "INC-20260819-5852",
+      "metadata": {},
+      "at": 1787152944233
+    },
+    {
+      "id": "28530233-590a-4d21-b9eb-f6fa6878a49c",
+      "type": "AUTH_SUCCESS",
+      "actorId": "divya",
+      "actorName": "Divya Ramesh",
+      "message": "User \"Divya Ramesh\" (VOLUNTEER) logged in successfully.",
+      "incidentId": null,
+      "metadata": {},
+      "at": 1787152935926
+    },
+    {
+      "id": "5bfe13de-c490-488e-a8db-93ec1c5c398f",
+      "type": "AUTH_LOGOUT",
+      "actorId": "anjali",
+      "actorName": "Anjali Menon",
+      "message": "User \"Anjali Menon\" logged out.",
+      "incidentId": null,
+      "metadata": {},
+      "at": 1787152931637
+    },
+    {
+      "id": "9080b149-10ee-4bbb-81bb-3329ec10d73c",
+      "type": "TASK_ASSIGNED",
+      "actorId": "admin",
+      "actorName": "Control Room Lead (Arun K.)",
+      "message": "Divya Ramesh was assigned to Crowding at PARK-03 by Control Room Lead (Arun K.). 30s timer started.",
+      "incidentId": "INC-20260819-5852",
+      "metadata": {},
+      "at": 1787152926774
+    },
+    {
+      "id": "99bdc3d2-f080-4db8-abf4-e0ae4e7bad92",
+      "type": "INCIDENT_RESOLVED",
+      "actorId": "anjali",
+      "actorName": "Anjali Menon",
+      "message": "Medical at FOOD-07 RESOLVED by Anjali Menon. Note: all fine",
+      "incidentId": "INC-20260819-8926",
+      "metadata": {},
+      "at": 1787152573886
+    },
+    {
+      "id": "d962e390-7d85-451e-850f-ae92e0c92226",
+      "type": "TASK_STARTED",
+      "actorId": "anjali",
+      "actorName": "Anjali Menon",
+      "message": "Anjali Menon started ON-SCENE response for Medical at FOOD-07.",
+      "incidentId": "INC-20260819-8926",
+      "metadata": {},
+      "at": 1787152556569
+    },
+    {
+      "id": "7259230b-234a-4d04-a9a5-7983073911f5",
+      "type": "TASK_ACCEPTED",
+      "actorId": "anjali",
+      "actorName": "Anjali Menon",
+      "message": "Anjali Menon ACCEPTED response for Medical at FOOD-07.",
+      "incidentId": "INC-20260819-8926",
+      "metadata": {},
+      "at": 1787152515692
+    },
+    {
+      "id": "139a0aa3-9f68-41df-999c-8677f840a46a",
+      "type": "AUTH_SUCCESS",
+      "actorId": "anjali",
+      "actorName": "Anjali Menon",
+      "message": "User \"Anjali Menon\" (VOLUNTEER) logged in successfully.",
+      "incidentId": null,
+      "metadata": {},
+      "at": 1787152503800
+    },
+    {
+      "id": "712b970e-dde3-47c0-a3d4-a653f30049f0",
+      "type": "TASK_ASSIGNED",
+      "actorId": "admin",
+      "actorName": "Control Room Lead (Arun K.)",
+      "message": "Anjali Menon was assigned to Medical at FOOD-07 by Control Room Lead (Arun K.). 30s timer started.",
+      "incidentId": "INC-20260819-8926",
+      "metadata": {},
+      "at": 1787152497614
+    },
+    {
+      "id": "7b04bf0d-8530-4d15-85f2-21ea801167ce",
+      "type": "INCIDENT_CREATED",
+      "actorId": "civilian",
+      "actorName": "Civilian",
+      "message": "New HIGH-priority Medical report at FOOD-07.",
+      "incidentId": "INC-20260819-8926",
+      "metadata": {},
+      "at": 1787152477779
+    },
+    {
+      "id": "c95a374e-8b02-4432-8b52-d69d90800838",
+      "type": "AUTH_SUCCESS",
+      "actorId": "usr-admin",
+      "actorName": "Control Room Lead (Arun K.)",
+      "message": "User \"Control Room Lead (Arun K.)\" (ORGANIZER) logged in successfully.",
+      "incidentId": null,
+      "metadata": {},
+      "at": 1787152390963
+    },
+    {
+      "id": "4006d2cf-a5ce-421e-9908-856d3d76abf4",
+      "type": "INCIDENT_CLUSTERED",
+      "actorId": "civilian",
+      "actorName": "Civilian",
+      "message": "Clustered report #3 for Crowding at PARK-03. Priority is HIGH.",
+      "incidentId": "INC-20260819-5852",
+      "metadata": {},
+      "at": 1787152264379
+    },
+    {
+      "id": "b648001b-f6a2-4f93-a538-6616653eb903",
+      "type": "INCIDENT_CLUSTERED",
+      "actorId": "civilian",
+      "actorName": "Civilian",
+      "message": "Clustered report #2 for Crowding at PARK-03. Priority is MEDIUM.",
+      "incidentId": "INC-20260819-5852",
+      "metadata": {},
+      "at": 1787152264362
+    },
+    {
+      "id": "b64abc69-d386-4b73-b429-f4832b1600b6",
+      "type": "INCIDENT_CREATED",
+      "actorId": "civilian",
+      "actorName": "Civilian",
+      "message": "New MEDIUM-priority Crowding report at PARK-03.",
+      "incidentId": "INC-20260819-5852",
+      "metadata": {},
+      "at": 1787152264344
+    },
+    {
+      "id": "f97eb98e-dc12-4dab-851e-16fc603b090b",
+      "type": "INCIDENT_RESOLVED",
+      "actorId": "anjali",
+      "actorName": "Anjali Menon",
+      "message": "Medical at FOOD-07 RESOLVED by Anjali Menon. Note: Patient safely treated with ORS packet and resting.",
+      "incidentId": "INC-20260819-9043",
+      "metadata": {},
+      "at": 1787152264319
+    },
+    {
+      "id": "5bf2ca4a-36ff-4ff3-9111-4493446ade77",
+      "type": "TASK_STARTED",
+      "actorId": "anjali",
+      "actorName": "Anjali Menon",
+      "message": "Anjali Menon started ON-SCENE response for Medical at FOOD-07.",
+      "incidentId": "INC-20260819-9043",
+      "metadata": {},
+      "at": 1787152264293
+    },
+    {
+      "id": "ecaf8b27-47b1-4c43-915d-ca853dc746f1",
+      "type": "TASK_ACCEPTED",
+      "actorId": "anjali",
+      "actorName": "Anjali Menon",
+      "message": "Anjali Menon ACCEPTED response for Medical at FOOD-07.",
+      "incidentId": "INC-20260819-9043",
+      "metadata": {},
+      "at": 1787152264272
+    },
+    {
+      "id": "e9cded39-3ea8-4d00-9eb6-1dafd79295c6",
+      "type": "TASK_ASSIGNED",
+      "actorId": "admin",
+      "actorName": "Control Room Lead (Arun K.)",
+      "message": "Anjali Menon was assigned to Medical at FOOD-07 by Control Room Lead (Arun K.). 30s timer started.",
+      "incidentId": "INC-20260819-9043",
+      "metadata": {},
+      "at": 1787152264254
+    },
+    {
+      "id": "04dcb790-50d3-47bf-84b0-5d6e5802f1a6",
+      "type": "INCIDENT_CREATED",
+      "actorId": "civilian",
+      "actorName": "Civilian",
+      "message": "New HIGH-priority Medical report at FOOD-07.",
+      "incidentId": "INC-20260819-9043",
+      "metadata": {},
+      "at": 1787152264238
+    },
+    {
+      "id": "8020decc-ba69-45af-987d-4be0634c5a3f",
+      "type": "AUTH_SUCCESS",
+      "actorId": "anjali",
+      "actorName": "Anjali Menon",
+      "message": "User \"Anjali Menon\" (VOLUNTEER) logged in successfully.",
+      "incidentId": null,
+      "metadata": {},
+      "at": 1787152264226
+    }
+  ]
+}

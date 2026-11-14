@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#061b2c" />
+  <title>Sahaaya Grid — Emergency Assistance</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&family=Noto+Sans+Malayalam:wght@400;600;700;800&family=Noto+Sans+Tamil:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="civilian.css" />
+  <link rel="stylesheet" href="civilian-overrides.css" />
+</head>
+<body>
+  <main class="phone-shell">
+    <!-- Top Bar -->
+    <header class="app-header">
+      <a class="brand" href="civilian.html">
+        <span class="brand-mark">✚</span>
+        <span class="brand-text">Sahaaya <b>Grid</b></span>
+      </a>
+      <div class="header-right">
+        <div class="lang-switch">
+          <button id="lang-en" class="lang-btn active">EN</button>
+          <button id="lang-ml" class="lang-btn">മലയാളം</button>
+          <button id="lang-ta" class="lang-btn">தமிழ்</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- SCREEN 1: Scan / Select Zone -->
+    <section id="scan-screen" class="screen">
+      <div class="hero">
+        <div class="shield-pulse">✚</div>
+        <p class="eyebrow" data-i18n="event_banner">TECHX KERALA 2026 · EMERGENCY DISPATCH</p>
+        <h1 data-i18n="need_help_title">Need immediate help?</h1>
+        <p class="subtitle" data-i18n="need_help_desc">Scan the nearest QR code or select your venue zone to report an emergency.</p>
+      </div>
+
+      <div class="scan-card">
+        <div id="camera-wrap" class="camera">
+          <video id="camera" playsinline muted></video>
+          <div class="scan-frame"><i></i><i></i><i></i><i></i></div>
+          <div class="camera-placeholder">
+            <span class="cam-icon">⌖</span>
+            <b data-i18n="camera_ready">Point Camera at Zone QR</b>
+            <small data-i18n="camera_tip">QR codes are posted on pillars, stalls, and gates</small>
+          </div>
+        </div>
+        <button id="start-camera" class="btn primary">
+          <span data-i18n="open_camera">Open Camera & Scan QR</span> <span>⌖</span>
+        </button>
+        <p id="camera-message" class="camera-message" data-i18n="camera_privacy">Camera is used only inside your browser to read zone location.</p>
+        
+        <div class="divider"><span data-i18n="or_choose_zone">OR CHOOSE YOUR CURRENT ZONE</span></div>
+        
+        <div class="zone-selector-wrap">
+          <label for="manual-zone" class="field-label" data-i18n="select_zone_label">Select Event Zone:</label>
+          <select id="manual-zone" class="zone-dropdown">
+            <option value="" disabled selected data-i18n="choose_zone_placeholder">-- Choose your location --</option>
+            <option value="FOOD-07">FOOD-07 · Food Court East (Stalls 1-8)</option>
+            <option value="FOOD-08">FOOD-08 · Food Court West (Seating)</option>
+            <option value="AUD-02">AUD-02 · Main Auditorium Hall</option>
+            <option value="GATE-01">GATE-01 · Main Entrance Gate</option>
+            <option value="PARK-03">PARK-03 · East Parking Area</option>
+            <option value="STAGE-01">STAGE-01 · Main Concert Stage</option>
+            <option value="FIRST-AID-01">FIRST-AID-01 · Medical Tent 1</option>
+          </select>
+          <button id="confirm-manual-zone" class="btn secondary" style="margin-top: 10px;" data-i18n="proceed_with_zone">
+            Confirm Location & Proceed <span>→</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCREEN 2: Emergency Report Form -->
+    <section id="report-screen" class="screen hidden">
+      <div class="zone-bar">
+        <div class="zone-info">
+          <span class="pin-icon">📍</span>
+          <div>
+            <small data-i18n="your_location">YOUR LOCATION</small>
+            <strong id="zone-display">FOOD-07 · Food Court East</strong>
+          </div>
+        </div>
+        <button id="rescan-btn" class="rescan-btn" data-i18n="change_location">Change</button>
+      </div>
+
+      <div class="verified-pill">
+        <span>✓</span> <span data-i18n="zone_verified">Location verified. Nearest responders will be alerted.</span>
+      </div>
+
+      <h2 class="section-title" data-i18n="what_happening">What is happening?</h2>
+
+      <div class="help-grid">
+        <button type="button" class="help-card selected" data-type="Medical" data-priority="high">
+          <span class="cat-icon red">🚑</span>
+          <div class="cat-info">
+            <b data-i18n="type_medical">Medical Emergency</b>
+            <small data-i18n="type_medical_desc">Injury, faintness, collapse, illness</small>
+          </div>
+        </button>
+
+        <button type="button" class="help-card" data-type="Crowding" data-priority="medium">
+          <span class="cat-icon amber">🏃</span>
+          <div class="cat-info">
+            <b data-i18n="type_crowding">Unsafe Crowding</b>
+            <small data-i18n="type_crowding_desc">Severe congestion, surge, blocked exit</small>
+          </div>
+        </button>
+
+        <button type="button" class="help-card" data-type="Fire / Smoke" data-priority="critical">
+          <span class="cat-icon red">🔥</span>
+          <div class="cat-info">
+            <b data-i18n="type_fire">Fire / Smoke</b>
+            <small data-i18n="type_fire_desc">Flames, heavy smoke, explosion risk</small>
+          </div>
+        </button>
+
+        <button type="button" class="help-card" data-type="Security" data-priority="high">
+          <span class="cat-icon blue">🛡️</span>
+          <div class="cat-info">
+            <b data-i18n="type_security">Security / Threat</b>
+            <small data-i18n="type_security_desc">Fight, theft, harassment, perimeter breach</small>
+          </div>
+        </button>
+
+        <button type="button" class="help-card" data-type="Missing person" data-priority="high">
+          <span class="cat-icon amber">🔍</span>
+          <div class="cat-info">
+            <b data-i18n="type_missing">Missing Person</b>
+            <small data-i18n="type_missing_desc">Lost child, separated group member</small>
+          </div>
+        </button>
+
+        <button type="button" class="help-card" data-type="Infrastructure" data-priority="low">
+          <span class="cat-icon teal">⚠️</span>
+          <div class="cat-info">
+            <b data-i18n="type_infra">Infrastructure Hazard</b>
+            <small data-i18n="type_infra_desc">Broken barrier, electrical fault, spill</small>
+          </div>
+        </button>
+      </div>
+
+      <div class="form-group">
+        <label for="description" class="field-label">
+          <span data-i18n="extra_details">Extra details / Landmark</span>
+          <em data-i18n="optional_tag">(Optional)</em>
+        </label>
+        <textarea id="description" rows="3" placeholder="e.g. Near stall 4, wearing red t-shirt..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="callback" class="field-label">
+          <span data-i18n="callback_number">Callback Phone Number</span>
+          <em data-i18n="optional_tag">(Optional)</em>
+        </label>
+        <input id="callback" type="tel" inputmode="tel" placeholder="e.g. +91 98765 43210" />
+      </div>
+
+      <div class="form-group photo-group">
+        <label class="field-label">
+          <span data-i18n="photo_evidence">Photo Evidence</span>
+          <em data-i18n="optional_tag">(Optional)</em>
+        </label>
+        <div class="photo-controls">
+          <label for="photo-input" class="photo-upload-btn">
+            <span>📷</span> <span id="photo-label-text" data-i18n="take_upload_photo">Take / Upload Photo</span>
+          </label>
+          <input type="file" id="photo-input" accept="image/*" capture="environment" style="display: none;" />
+          <div id="photo-preview-wrap" class="photo-preview-wrap hidden">
+            <img id="photo-preview" src="" alt="Incident evidence preview" />
+            <button id="remove-photo" type="button" class="remove-photo-btn">×</button>
+          </div>
+        </div>
+      </div>
+
+      <button id="send-report-btn" class="btn emergency-btn">
+        <span id="send-text" data-i18n="send_emergency_btn">🚨 SUBMIT EMERGENCY REPORT</span>
+        <span class="arrow">→</span>
+      </button>
+
+      <p class="privacy-note" data-i18n="privacy_guarantee">
+        🔒 Zero install · No account needed · Handled directly by on-site safety coordinators.
+      </p>
+    </section>
+
+    <!-- SCREEN 3: Success Confirmation & Live Tracking -->
+    <section id="success-screen" class="screen hidden">
+      <div class="success-banner">
+        <div class="check-circle">✓</div>
+        <p class="eyebrow" data-i18n="report_dispatched">REPORT DISPATCHED TO COMMAND CENTER</p>
+        <h1 data-i18n="help_is_coming">Help is being coordinated.</h1>
+        <p class="success-desc" data-i18n="stay_safe_message">
+          Your emergency report has been prioritized. Please stay in a safe spot if possible.
+        </p>
+      </div>
+
+      <div class="incident-card">
+        <div class="incident-card-header">
+          <div>
+            <small data-i18n="incident_id_label">INCIDENT ID</small>
+            <strong id="track-incident-id">INC-20260819-0042</strong>
+          </div>
+          <span id="track-priority-badge" class="badge high">HIGH</span>
+        </div>
+
+        <div class="incident-meta-grid">
+          <div>
+            <small data-i18n="type_label">TYPE</small>
+            <b id="track-type">Medical Emergency</b>
+          </div>
+          <div>
+            <small data-i18n="location_label">LOCATION</small>
+            <b id="track-zone">FOOD-07 (Food Court East)</b>
+          </div>
+        </div>
+
+        <!-- Live Step Tracker -->
+        <div class="live-tracker">
+          <div class="tracker-header">
+            <span class="live-indicator"></span>
+            <small data-i18n="live_status">REAL-TIME DISPATCH STATUS</small>
+          </div>
+
+          <div class="stepper">
+            <div class="step active" id="step-reported">
+              <span class="step-dot"></span>
+              <div class="step-content">
+                <strong data-i18n="status_reported">Reported</strong>
+                <small data-i18n="status_reported_desc">Received at Command Center</small>
+              </div>
+            </div>
+
+            <div class="step" id="step-assigned">
+              <span class="step-dot"></span>
+              <div class="step-content">
+                <strong data-i18n="status_assigned">Responder Assigned</strong>
+                <small data-i18n="status_assigned_desc">Nearest volunteer dispatched</small>
+              </div>
+            </div>
+
+            <div class="step" id="step-in_progress">
+              <span class="step-dot"></span>
+              <div class="step-content">
+                <strong data-i18n="status_inprogress">Responder On Scene</strong>
+                <small data-i18n="status_inprogress_desc">Actively managing the situation</small>
+              </div>
+            </div>
+
+            <div class="step" id="step-resolved">
+              <span class="step-dot"></span>
+              <div class="step-content">
+                <strong data-i18n="status_resolved">Resolved</strong>
+                <small data-i18n="status_resolved_desc">Incident safely handled</small>
+              </div>
+            </div>
+          </div>
+
+          <div id="resolution-box" class="resolution-box hidden">
+            <b data-i18n="resolution_note">Resolution Note:</b>
+            <p id="resolution-text">Patient handed to first-aid medical team.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="action-links">
+        <a href="civilian.html" class="btn secondary" data-i18n="report_another">Report Another Incident</a>
+      </div>
+    </section>
+
+    <!-- Footer Helplines -->
+    <footer class="app-footer">
+      <div class="emergency-contacts">
+        <a href="tel:112" class="call-btn danger">
+          <span>☎</span> <b data-i18n="call_112">Immediate Danger? Call 112</b>
+        </a>
+        <a href="tel:+919876543210" class="call-btn">
+          <span>✚</span> <b data-i18n="call_firstaid">Event First Aid: +91 98765 43210</b>
+        </a>
+      </div>
+      <div class="footer-links">
+        <a href="index.html" data-i18n="organizer_login_link">Organizer Command Center →</a>
+        <span>•</span>
+        <a href="volunteer.html" data-i18n="volunteer_login_link">Volunteer Console →</a>
+      </div>
+    </footer>
+  </main>
+
+  <script src="civilian.js"></script>
+</body>
+</html>

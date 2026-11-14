@@ -1,0 +1,571 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#061b2c" />
+  <title>Sahaaya Grid — Command Center</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&family=Noto+Sans+Malayalam:wght@400;600;700;800&family=Noto+Sans+Tamil:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="overrides.css" />
+</head>
+<body>
+  <!-- 1. ORGANIZER LOGIN OVERLAY (Enforced when unauthenticated) -->
+  <div id="login-overlay" class="login-overlay">
+    <div class="login-box">
+      <div class="login-brand">
+        <span class="brand-mark">✚</span>
+        <h2>Sahaaya <b>Grid</b></h2>
+      </div>
+      <p class="login-subtitle" data-i18n="login_subtitle">ORGANIZER COMMAND CENTER · SECURE LOGIN</p>
+
+      <form id="organizer-login-form">
+        <div class="form-group">
+          <label for="org-username" data-i18n="org_username_label">Organizer Username:</label>
+          <input type="text" id="org-username" placeholder="e.g. admin" value="admin" required autocomplete="username" />
+        </div>
+        <div class="form-group">
+          <label for="org-password" data-i18n="org_password_label">Password:</label>
+          <input type="password" id="org-password" placeholder="••••••••" value="admin123" required autocomplete="current-password" />
+        </div>
+
+        <div id="org-login-error" class="login-error hidden"></div>
+
+        <button type="submit" class="btn primary full" data-i18n="signin_command_btn">Sign In to Command Center →</button>
+      </form>
+
+      <div class="demo-auth-box">
+        <small>Demo Credentials: <b>admin</b> / <b>admin123</b></small>
+        <button type="button" id="quick-admin-login" class="btn secondary small" data-i18n="quick_fill_admin">Quick Fill Admin Login</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. MAIN APPLICATION SHELL -->
+  <div class="app-shell hidden" id="app-shell">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">✚</span>
+        <span>Sahaaya<br><b>Grid</b></span>
+      </a>
+
+      <nav>
+        <button class="nav-link active" data-view="command">
+          <span>⌘</span> <b data-i18n="nav_command">Command Center</b>
+        </button>
+        <button class="nav-link" data-view="map">
+          <span>⌖</span> <b data-i18n="nav_map">Live Venue Map</b>
+        </button>
+        <button class="nav-link" data-view="volunteers">
+          <span>♙</span> <b data-i18n="nav_volunteers">Volunteers</b> <i id="vol-ready-badge">0</i>
+        </button>
+        <button class="nav-link" data-view="zones">
+          <span>◫</span> <b data-i18n="nav_zones">Zones & QR</b>
+        </button>
+        <button class="nav-link" data-view="analytics">
+          <span>📊</span> <b data-i18n="nav_analytics">Analytics</b>
+        </button>
+        <button class="nav-link" data-view="audit">
+          <span>📋</span> <b data-i18n="nav_audit">Audit Logs</b>
+        </button>
+        <hr class="nav-divider" />
+        <button class="nav-link text-muted" id="nav-civilian">
+          <span>⊕</span> <b data-i18n="nav_report">Civilian Report Page ↗</b>
+        </button>
+        <button class="nav-link text-muted" id="nav-volunteer-console">
+          <span>♟</span> <b data-i18n="nav_volunteer_app">Volunteer Console ↗</b>
+        </button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="event-card">
+          <span class="live-dot"></span>
+          <div>
+            <small data-i18n="live_event">LIVE EVENT</small>
+            <strong data-i18n="event_name">TechX Kerala 2026</strong>
+            <em data-i18n="venue_location">1,842 attendees · Main Ground</em>
+          </div>
+        </div>
+        
+        <div class="profile-card">
+          <div class="avatar">AK</div>
+          <div class="profile-info">
+            <span id="org-user-name">Arun K.</span>
+            <small data-i18n="role_lead">Lead Organizer (Admin)</small>
+          </div>
+          <button id="org-logout-btn" class="logout-icon-btn" title="Logout">⏻</button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main>
+      <!-- Top Header -->
+      <header>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open menu">☰</button>
+        <div>
+          <p class="eyebrow" data-i18n="event_command">EVENT COMMAND & DISPATCH</p>
+          <h1 id="page-title" data-i18n="page_title">Sahaaya Grid Command Center</h1>
+        </div>
+        <div class="header-actions">
+          <div class="lang-switch">
+            <button id="lang-en" class="lang-btn active">EN</button>
+            <button id="lang-ml" class="lang-btn">മലയാളം</button>
+            <button id="lang-ta" class="lang-btn">தமிழ்</button>
+          </div>
+          <button class="btn-icon bell" id="open-contacts-bell" title="Emergency Contacts">
+            <span>☎</span><i></i>
+          </button>
+          <button class="btn danger small" id="emergency-contacts-btn" data-i18n="emergency_contacts_btn">🚨 Emergency Contacts</button>
+        </div>
+      </header>
+
+      <!-- VIEW 1: COMMAND CENTER (Default) -->
+      <section class="view active" id="view-command">
+        <!-- 4 Metric Cards -->
+        <div class="stats-row">
+          <article class="stat-card">
+            <div>
+              <small data-i18n="stat_active_incidents">ACTIVE INCIDENTS</small>
+              <strong id="stat-active-count">0</strong>
+            </div>
+            <span class="tag-alert" id="stat-critical-count">0 high/crit</span>
+          </article>
+          <article class="stat-card">
+            <div>
+              <small data-i18n="stat_volunteers_online">VOLUNTEERS READY</small>
+              <strong id="stat-vol-ready">0 <b>/ 0</b></strong>
+            </div>
+            <span class="tag-ok" id="stat-vol-busy">0 on assignment</span>
+          </article>
+          <article class="stat-card">
+            <div>
+              <small data-i18n="stat_avg_response">AVG. DISPATCH TIME</small>
+              <strong id="stat-avg-resp">22s</strong>
+            </div>
+            <span class="tag-ok" data-i18n="target_met">Target: &lt; 30s</span>
+          </article>
+          <article class="stat-card">
+            <div>
+              <small data-i18n="stat_resolved_today">RESOLVED TODAY</small>
+              <strong id="stat-resolved-count">0</strong>
+            </div>
+            <span class="tag-ok" data-i18n="safe_resolution">100% attendance safe</span>
+          </article>
+        </div>
+
+        <!-- 2-Column Command Workspace -->
+        <div class="command-grid">
+          <!-- Left: Live Incident Queue -->
+          <div class="panel incident-queue-panel">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow" data-i18n="live_queue">LIVE INCIDENT QUEUE</p>
+                <h2><span data-i18n="needs_attention">Needs Attention</span> (<b id="queue-number">0</b>)</h2>
+              </div>
+              <div class="filter-pills">
+                <button class="filter-pill active" data-filter="all" data-i18n="filter_all">All Active</button>
+                <button class="filter-pill" data-filter="reported" data-i18n="filter_unassigned">Unassigned</button>
+                <button class="filter-pill" data-filter="high" data-i18n="filter_high">High / Crit</button>
+                <button class="filter-pill" data-filter="in_progress" data-i18n="filter_in_progress">In Progress</button>
+                <button class="filter-pill" data-filter="resolved" data-i18n="filter_resolved">Resolved</button>
+              </div>
+            </div>
+
+            <div class="incident-list" id="incident-list">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+
+          <!-- Right: Venue Sectors & Audit Snapshot -->
+          <div class="side-stack">
+            <div class="panel">
+              <div class="panel-head">
+                <div>
+                  <p class="eyebrow" data-i18n="venue_overview">VENUE SECTORS</p>
+                  <h3 data-i18n="live_zone_status">Live Zone Status</h3>
+                </div>
+                <button class="btn secondary small" data-switch="map" data-i18n="open_full_map">Full Map →</button>
+              </div>
+              <div class="zone-grid" id="zone-status-grid">
+                <!-- Dynamically populated -->
+              </div>
+            </div>
+
+            <div class="panel">
+              <div class="panel-head">
+                <div>
+                  <p class="eyebrow" data-i18n="live_audit_feed">DISPATCH & SECURITY TIMELINE</p>
+                  <h3 data-i18n="realtime_stream">Realtime Event Stream</h3>
+                </div>
+                <button class="btn secondary small" data-switch="audit" data-i18n="view_all_logs">View All →</button>
+              </div>
+              <div class="timeline mini-timeline" id="live-timeline">
+                <!-- Dynamically populated -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- VIEW 2: LIVE VENUE MAP -->
+      <section class="view" id="view-map">
+        <div class="panel">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow" data-i18n="nav_map">LIVE VENUE MAP</p>
+              <h2 data-i18n="map_title">Main Grounds & Sector Grid</h2>
+            </div>
+            <span class="live-tag" data-i18n="live_feed">● Live Telemetry</span>
+          </div>
+
+          <div class="map-container">
+            <div class="venue-grid-map" id="venue-grid-map">
+              <div class="map-zone zone-aud" data-zone="AUD-02">
+                <b>AUD-02</b>
+                <span>Main Auditorium</span>
+                <div class="zone-badge-count"></div>
+              </div>
+              <div class="map-zone zone-stage" data-zone="STAGE-01">
+                <b>STAGE-01</b>
+                <span>Concert Stage</span>
+                <div class="zone-badge-count"></div>
+              </div>
+              <div class="map-zone zone-food7" data-zone="FOOD-07">
+                <b>FOOD-07</b>
+                <span>Food Court East</span>
+                <div class="zone-badge-count"></div>
+              </div>
+              <div class="map-zone zone-food8" data-zone="FOOD-08">
+                <b>FOOD-08</b>
+                <span>Food Court West</span>
+                <div class="zone-badge-count"></div>
+              </div>
+              <div class="map-zone zone-gate" data-zone="GATE-01">
+                <b>GATE-01</b>
+                <span>Main Entrance Gate</span>
+                <div class="zone-badge-count"></div>
+              </div>
+              <div class="map-zone zone-park" data-zone="PARK-03">
+                <b>PARK-03</b>
+                <span>East Parking Lot</span>
+                <div class="zone-badge-count"></div>
+              </div>
+              <div class="map-zone zone-med" data-zone="FIRST-AID-01">
+                <b>FIRST-AID-01</b>
+                <span>Medical Tent 1</span>
+                <div class="zone-badge-count"></div>
+              </div>
+
+              <!-- Pathway lines -->
+              <div class="road r1"></div>
+              <div class="road r2"></div>
+
+              <!-- Markers container -->
+              <div id="map-incident-pins"></div>
+              <div id="map-volunteer-pins"></div>
+
+              <!-- Legend -->
+              <div class="map-legend">
+                <span><i class="dot-red"></i> Critical / High</span>
+                <span><i class="dot-amber"></i> Medium</span>
+                <span><i class="dot-blue"></i> Low</span>
+                <span><i class="dot-green"></i> Volunteer Ready</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- VIEW 3: VOLUNTEER MANAGEMENT -->
+      <section class="view" id="view-volunteers">
+        <div class="panel">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow" data-i18n="nav_volunteers">VOLUNTEER MANAGEMENT</p>
+              <h2 data-i18n="volunteers_roster_title">Active Field Responders Roster</h2>
+            </div>
+            <button class="btn primary small" id="add-vol-btn" data-i18n="register_vol_btn">+ Register Volunteer</button>
+          </div>
+
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th data-i18n="th_responder">Responder</th>
+                  <th data-i18n="th_skills">Skills / Specialization</th>
+                  <th data-i18n="th_sector">Sector Zone</th>
+                  <th data-i18n="th_presence">Presence Status</th>
+                  <th data-i18n="th_assignment">Current Assignment</th>
+                  <th data-i18n="th_actions">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="volunteers-table-body">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- VIEW 4: ZONES & QR CODES -->
+      <section class="view" id="view-zones">
+        <div class="panel">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow" data-i18n="nav_zones">ZONE & QR CODE MANAGEMENT</p>
+              <h2 data-i18n="venue_zones_title">Venue Physical Zones</h2>
+            </div>
+            <div class="head-btn-group">
+              <button class="btn secondary small" id="print-all-qrs-btn" data-i18n="print_qrs_btn">🖨 Print QR Sheets</button>
+              <button class="btn primary small" id="create-zone-btn" data-i18n="create_zone_btn">+ Create New Zone</button>
+            </div>
+          </div>
+
+          <div class="zones-grid" id="zones-card-grid">
+            <!-- Dynamically populated with QRs -->
+          </div>
+        </div>
+      </section>
+
+      <!-- VIEW 5: ANALYTICS -->
+      <section class="view" id="view-analytics">
+        <div class="stats-row analytics-metrics">
+          <article class="stat-card">
+            <div>
+              <small data-i18n="an_total_reports">TOTAL REPORTS</small>
+              <strong id="an-total">0</strong>
+            </div>
+          </article>
+          <article class="stat-card">
+            <div>
+              <small data-i18n="an_res_rate">RESOLUTION RATE</small>
+              <strong id="an-res-rate">100%</strong>
+            </div>
+          </article>
+          <article class="stat-card">
+            <div>
+              <small data-i18n="an_avg_response">AVG. DISPATCH TIME</small>
+              <strong id="an-avg-resp">22s</strong>
+            </div>
+          </article>
+          <article class="stat-card">
+            <div>
+              <small data-i18n="an_avg_resolution">AVG. RESOLUTION TIME</small>
+              <strong id="an-avg-resol">4m 12s</strong>
+            </div>
+          </article>
+        </div>
+
+        <div class="analytics-grid">
+          <div class="panel">
+            <div class="panel-head">
+              <h3 data-i18n="an_by_type">Incidents by Category</h3>
+            </div>
+            <div id="chart-by-type" class="chart-container"></div>
+          </div>
+          <div class="panel">
+            <div class="panel-head">
+              <h3 data-i18n="an_by_prio">Incidents by Priority</h3>
+            </div>
+            <div id="chart-by-priority" class="chart-container"></div>
+          </div>
+          <div class="panel">
+            <div class="panel-head">
+              <h3 data-i18n="an_by_zone">Incidents by Zone</h3>
+            </div>
+            <div id="chart-by-zone" class="chart-container"></div>
+          </div>
+          <div class="panel">
+            <div class="panel-head">
+              <h3 data-i18n="an_vol_leaderboard">Volunteer Response Leaderboard</h3>
+            </div>
+            <div id="volunteer-leaderboard" class="table-wrap"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- VIEW 6: AUDIT LOGS -->
+      <section class="view" id="view-audit">
+        <div class="panel">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow" data-i18n="nav_audit">SYSTEM SECURITY & DISPATCH AUDIT</p>
+              <h2 data-i18n="audit_trail_title">Immutable Event Trail</h2>
+            </div>
+            <div class="audit-search-wrap">
+              <input type="text" id="audit-search" placeholder="Search by actor, zone, or incident ID..." />
+            </div>
+          </div>
+
+          <div class="audit-log-list" id="audit-log-list">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- MODAL: SMART DISPATCH -->
+  <div id="smart-dispatch-modal" class="modal">
+    <div class="modal-card dispatch-card">
+      <div class="modal-header">
+        <div>
+          <p class="eyebrow" data-i18n="smart_dispatch_title">SMART VOLUNTEER DISPATCH ENGINE</p>
+          <h2 id="dispatch-modal-title">Assign Responder</h2>
+        </div>
+        <button class="close-modal-btn" data-close="smart-dispatch-modal">×</button>
+      </div>
+
+      <div class="dispatch-summary" id="dispatch-incident-summary"></div>
+
+      <h4 class="sugg-header" data-i18n="ranked_match_title">Ranked Volunteer Match (Skill + Proximity + Availability)</h4>
+      <div class="suggestions-list" id="dispatch-suggestions-list">
+        <!-- Dynamically loaded -->
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: INCIDENT DETAILS -->
+  <div id="incident-detail-modal" class="modal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h2 data-i18n="incident_details_title">Incident Dossier</h2>
+        <button class="close-modal-btn" data-close="incident-detail-modal">×</button>
+      </div>
+      <div id="detail-modal-body"></div>
+    </div>
+  </div>
+
+  <!-- MODAL: EMERGENCY CONTACTS -->
+  <div id="contacts-modal" class="modal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h2 data-i18n="emergency_hotlines_title">Venue Emergency Hotlines</h2>
+        <button class="close-modal-btn" data-close="contacts-modal">×</button>
+      </div>
+      <div class="contacts-list">
+        <a class="contact-card" href="tel:112">
+          <span class="contact-icon red">🚨</span>
+          <div>
+            <b>National Emergency Control</b>
+            <small>Call 112 (Police / Fire / Ambulance)</small>
+          </div>
+          <em>Dial ↗</em>
+        </a>
+        <a class="contact-card" href="tel:+919876543210">
+          <span class="contact-icon green">✚</span>
+          <div>
+            <b>On-Site First Aid & Medical Lead</b>
+            <small>+91 98765 43210</small>
+          </div>
+          <em>Dial ↗</em>
+        </a>
+        <a class="contact-card" href="tel:+919812345678">
+          <span class="contact-icon blue">🛡️</span>
+          <div>
+            <b>Venue Security & Perimeter Desk</b>
+            <small>+91 98123 45678</small>
+          </div>
+          <em>Dial ↗</em>
+        </a>
+        <a class="contact-card" href="tel:+919845678901">
+          <span class="contact-icon amber">🔥</span>
+          <div>
+            <b>Fire Response & Safety Marshall</b>
+            <small>+91 98456 78901</small>
+          </div>
+          <em>Dial ↗</em>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: CREATE ZONE -->
+  <div id="create-zone-modal" class="modal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h2 data-i18n="create_zone_title">Create New Venue Zone</h2>
+        <button class="close-modal-btn" data-close="create-zone-modal">×</button>
+      </div>
+      <form id="create-zone-form">
+        <div class="form-group">
+          <label data-i18n="zone_code_label">Zone Code (e.g. AUD-03):</label>
+          <input type="text" id="new-zone-code" required placeholder="ZONE-01" />
+        </div>
+        <div class="form-group">
+          <label data-i18n="zone_name_label">Zone Name:</label>
+          <input type="text" id="new-zone-name" required placeholder="Food Court North" />
+        </div>
+        <div class="form-group">
+          <label data-i18n="zone_sector_label">Sector Category:</label>
+          <select id="new-zone-sector">
+            <option value="Food Court">Food Court</option>
+            <option value="Auditorium">Auditorium</option>
+            <option value="Entrance">Entrance</option>
+            <option value="Stage">Stage</option>
+            <option value="Parking">Parking</option>
+            <option value="General">General</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label data-i18n="zone_desc_label">Location Description:</label>
+          <input type="text" id="new-zone-desc" placeholder="Opposite Gate 2..." />
+        </div>
+        <button type="submit" class="btn primary full" data-i18n="create_zone_submit">Create Zone & Generate QR</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL: REGISTER NEW VOLUNTEER -->
+  <div id="create-volunteer-modal" class="modal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h2 data-i18n="register_volunteer_title">Register New Field Volunteer</h2>
+        <button class="close-modal-btn" data-close="create-volunteer-modal">×</button>
+      </div>
+      <form id="create-volunteer-form">
+        <div class="form-group">
+          <label data-i18n="vol_fullname_label">Full Name:</label>
+          <input type="text" id="new-vol-name" required placeholder="e.g. Rahul Krishna" />
+        </div>
+        <div class="form-group">
+          <label data-i18n="vol_username_label">Username / Login ID:</label>
+          <input type="text" id="new-vol-username" required placeholder="e.g. rahul" />
+        </div>
+        <div class="form-group">
+          <label data-i18n="vol_password_label">Password / Security PIN:</label>
+          <input type="password" id="new-vol-password" value="vol123" required placeholder="••••••" />
+        </div>
+        <div class="form-group">
+          <label data-i18n="vol_phone_label">Phone Number:</label>
+          <input type="tel" id="new-vol-phone" placeholder="+91 98765 00007" />
+        </div>
+        <div class="form-group">
+          <label data-i18n="vol_zone_label">Assigned Sector / Zone:</label>
+          <select id="new-vol-zone">
+            <!-- Dynamically populated with zones -->
+          </select>
+        </div>
+        <div class="form-group">
+          <label data-i18n="vol_skills_label">Specialization Skills:</label>
+          <div class="skills-checkbox-grid">
+            <label><input type="checkbox" name="vol-skill" value="Medical" checked> Medical / First aid</label>
+            <label><input type="checkbox" name="vol-skill" value="Security"> Security / Crowd control</label>
+            <label><input type="checkbox" name="vol-skill" value="Fire / Smoke"> Fire / Smoke response</label>
+            <label><input type="checkbox" name="vol-skill" value="Missing person"> Missing person</label>
+            <label><input type="checkbox" name="vol-skill" value="Infrastructure"> Infrastructure / Safety</label>
+            <label><input type="checkbox" name="vol-skill" value="General" checked> General volunteer</label>
+          </div>
+        </div>
+        <button type="submit" class="btn primary full" data-i18n="register_vol_submit">Register Volunteer Responder</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

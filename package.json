@@ -1,0 +1,23 @@
+{
+  "name": "sahaaya-grid",
+  "version": "1.0.0",
+  "description": "Zero-Install Smart Emergency Reporting & Micro-Dispatch Platform for Crowded Events & Festivals",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node test-suite.js"
+  },
+  "keywords": [
+    "emergency-response",
+    "crowd-safety",
+    "micro-dispatch",
+    "qr-code",
+    "kerala-festivals",
+    "smart-city"
+  ],
+  "author": "Sahaaya Grid Team",
+  "license": "ISC",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

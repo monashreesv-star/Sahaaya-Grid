@@ -1,0 +1,58 @@
+/* Custom overrides for Sahaaya Grid — Trilingual & Modal Enhancements */
+body, input, select, textarea, button {
+  font-family: 'DM Sans', 'Noto Sans Malayalam', 'Noto Sans Tamil', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.nav-link b { font-weight: 600; }
+.badge { text-transform: uppercase; }
+
+/* Skills Checkbox Grid in Volunteer Registration */
+.skills-checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 8px;
+  background: #f4f8f7;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #dbe4e4;
+  margin-top: 4px;
+}
+
+.skills-checkbox-grid label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #112633;
+  cursor: pointer;
+}
+
+.skills-checkbox-grid input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+  accent-color: #087f76;
+}
+
+/* Language switch active state */
+.lang-switch .lang-btn.active {
+  background: #fff;
+  color: #055953;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+}
+
+/* Venue Map Boundary & Card Positioning Safeguards */
+.map-container {
+  padding: 18px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.venue-grid-map {
+  position: relative !important;
+  width: 100%;
+  height: 480px;
+  min-height: 460px;
+  overflow: hidden !important;
+  box-sizing: border-box;
+}
+

@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#071d2d" />
+  <title>Sahaaya Grid — Volunteer Responder Console</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&family=Noto+Sans+Malayalam:wght@400;600;700;800&family=Noto+Sans+Tamil:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="volunteer.css" />
+</head>
+<body>
+  <main class="console-shell">
+    <!-- Top Header -->
+    <header class="app-header">
+      <a class="brand" href="volunteer.html">
+        <span class="brand-mark">✚</span>
+        <span class="brand-text">Sahaaya <b>Grid</b></span>
+      </a>
+      <div class="header-right">
+        <div class="lang-switch">
+          <button id="lang-en" class="lang-btn active">EN</button>
+          <button id="lang-ml" class="lang-btn">മലയാളം</button>
+          <button id="lang-ta" class="lang-btn">தமிழ்</button>
+        </div>
+        <button id="logout-btn" class="logout-btn hidden" data-i18n="logout_btn">Logout ⏻</button>
+      </div>
+    </header>
+
+    <!-- Quick Switcher Bar (Always Available for Rapid Responder Testing) -->
+    <div class="responder-switch-bar">
+      <small data-i18n="active_responder_title">ACTIVE RESPONDER:</small>
+      <div class="responder-pills" id="responder-pills-list">
+        <button type="button" class="resp-pill active" data-user="anjali">Anjali (Medical)</button>
+        <button type="button" class="resp-pill" data-user="arun">Arun (Security)</button>
+        <button type="button" class="resp-pill" data-user="bala">Bala (Fire)</button>
+        <button type="button" class="resp-pill" data-user="divya">Divya (General)</button>
+        <button type="button" class="resp-pill" data-user="ravi">Ravi (Crowd)</button>
+        <button type="button" class="resp-pill" data-user="meera">Meera (Safety)</button>
+      </div>
+    </div>
+
+    <!-- 1. LOGIN SCREEN (Shown if not logged in) -->
+    <section id="login-screen" class="screen">
+      <div class="login-card">
+        <div class="shield-badge">♙</div>
+        <p class="eyebrow" data-i18n="responder_auth">FIELD RESPONDER PORTAL</p>
+        <h1 data-i18n="volunteer_login_title">Volunteer Login</h1>
+        <p class="login-desc" data-i18n="volunteer_login_desc">Sign in with your assigned volunteer credentials to receive live incident dispatches.</p>
+
+        <form id="volunteer-login-form">
+          <div class="form-group">
+            <label for="login-username" class="field-label" data-i18n="username_label">Username / Volunteer ID:</label>
+            <input type="text" id="login-username" placeholder="e.g. anjali" value="anjali" required autocomplete="username" />
+          </div>
+
+          <div class="form-group">
+            <label for="login-password" class="field-label" data-i18n="password_label">Password / Security PIN:</label>
+            <input type="password" id="login-password" placeholder="••••••" value="vol123" required autocomplete="current-password" />
+          </div>
+
+          <div id="login-error" class="error-msg hidden"></div>
+
+          <button type="submit" id="login-btn" class="btn primary">
+            <span data-i18n="signin_btn">Sign In to Shift</span> <span>→</span>
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- 2. VOLUNTEER CONSOLE (Shown when authenticated) -->
+    <section id="console-screen" class="screen hidden">
+      <!-- Volunteer Status Bar -->
+      <div class="welcome-bar">
+        <div class="user-meta">
+          <p class="eyebrow" data-i18n="responder_active_shift">ACTIVE SHIFT · FIELD RESPONSE</p>
+          <h1><span data-i18n="hi_prefix">Hi,</span> <b id="user-name">Anjali Menon</b></h1>
+          <p class="user-sub"><span id="user-skills">Medical Specialist</span> · <span id="user-zone">AUD-01</span></p>
+        </div>
+        <button id="availability-btn" class="availability-btn available">
+          <span class="dot"></span> <b id="avail-text">AVAILABLE</b>
+        </button>
+      </div>
+
+      <!-- Live Assignment Panel -->
+      <section id="task-panel" class="task-card empty">
+        <div class="empty-state">
+          <span class="radar-icon">📡</span>
+          <p class="eyebrow" data-i18n="dispatch_status">DISPATCH STATUS</p>
+          <h2 data-i18n="no_active_tasks">No active tasks</h2>
+          <p data-i18n="ready_for_dispatch">You are marked AVAILABLE. When an incident occurs near your sector, it will appear here immediately.</p>
+        </div>
+      </section>
+
+      <!-- Shift Metrics -->
+      <section class="panel shift-panel">
+        <p class="eyebrow" data-i18n="shift_summary">YOUR SHIFT ACTIVITY</p>
+        <div class="shift-stats">
+          <div class="stat-box">
+            <b id="stat-resolved">0</b>
+            <span data-i18n="stat_resolved">Incidents Resolved</span>
+          </div>
+          <div class="stat-box">
+            <b id="stat-dispatched">0</b>
+            <span data-i18n="stat_dispatched">Total Dispatched</span>
+          </div>
+          <div class="stat-box">
+            <b id="stat-status">Available</b>
+            <span data-i18n="stat_presence">Presence</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Shift Guidelines -->
+      <section class="panel guide-panel">
+        <p class="eyebrow" data-i18n="response_protocol">EMERGENCY PROTOCOL</p>
+        <ol class="protocol-list">
+          <li data-i18n="step_1"><b>Accept Dispatch:</b> Respond within 30 seconds when an incident is assigned.</li>
+          <li data-i18n="step_2"><b>Arrive On Scene:</b> Click "Start Response" upon reaching the attendee.</li>
+          <li data-i18n="step_3"><b>Resolve Safely:</b> Provide first-aid/assistance, enter a resolution note, and mark resolved.</li>
+        </ol>
+      </section>
+    </section>
+
+    <!-- Decline Modal -->
+    <div id="decline-modal" class="modal">
+      <div class="modal-card">
+        <h2 data-i18n="decline_task_title">Decline Assignment</h2>
+        <p data-i18n="decline_task_desc">Please select a reason for declining this emergency dispatch:</p>
+        <select id="decline-reason" class="modal-select">
+          <option value="Engaged in other attendee assistance">Engaged in other attendee assistance</option>
+          <option value="Outside physical reach / Sector transition">Outside physical reach / Sector transition</option>
+          <option value="Requires specialized equipment">Requires specialized equipment</option>
+          <option value="Taking mandatory rest break">Taking mandatory rest break</option>
+        </select>
+        <div class="modal-actions">
+          <button id="cancel-decline" class="btn secondary" data-i18n="cancel_btn">Cancel</button>
+          <button id="confirm-decline" class="btn danger" data-i18n="confirm_decline_btn">Decline & Escalate</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Resolution Modal -->
+    <div id="resolve-modal" class="modal">
+      <div class="modal-card">
+        <h2 data-i18n="resolve_task_title">Resolve Incident</h2>
+        <p data-i18n="resolve_task_desc">Provide an optional resolution summary for the Command Center and attendee:</p>
+        <textarea id="resolution-note" class="modal-textarea" rows="3" placeholder="e.g. Administered first aid. Attendee rested and safe."></textarea>
+        <div class="modal-actions">
+          <button id="cancel-resolve" class="btn secondary" data-i18n="cancel_btn">Cancel</button>
+          <button id="confirm-resolve" class="btn primary" data-i18n="confirm_resolve_btn">Mark Resolved ✓</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="console-footer">
+      <a href="index.html" data-i18n="command_center_link">← Command Center</a>
+      <span>•</span>
+      <a href="civilian.html" data-i18n="civilian_report_link">Civilian Report Page</a>
+    </footer>
+  </main>
+
+  <script src="volunteer.js"></script>
+</body>
+</html>
