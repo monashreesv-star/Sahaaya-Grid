@@ -62,10 +62,10 @@ node server.js
 ```
 
 ### Application URLs:
-- **Organizer Command Center**: `http://localhost:3000/index.html`
-- **Volunteer Responder Console**: `http://localhost:3000/volunteer.html`
-- **Civilian Emergency Report**: `http://localhost:3000/civilian.html?zone=FOOD-07`
-- **Demo Multi-Zone QR Generator**: `http://localhost:3000/demo-qr.html`
+- **Organizer Command Center**: `https://sahaaya-grid.onrender.com/civilian.html`
+- **Volunteer Responder Console**: `https://sahaaya-grid.onrender.com/volunteer.html`
+- **Civilian Emergency Report**: `https://sahaaya-grid.onrender.com/civilian.html?zone=FOOD-07`
+- **Demo Multi-Zone QR Generator**: `https://sahaaya-grid.onrender.com/demo-qr.html`
 
 ---
 
@@ -73,17 +73,17 @@ node server.js
 
 ```text
 1. [Civilian]
-   Open http://localhost:3000/civilian.html?zone=FOOD-07 (or scan QR from demo-qr.html).
+   Open https://sahaaya-grid.onrender.com/civilian.html?zone=FOOD-07 (or scan QR from demo-qr.html).
    Select "Medical Emergency", add details, and click "SUBMIT EMERGENCY REPORT".
    Incident ID (e.g. INC-20260819-0042) is generated and public live tracking loads.
 
 2. [Organizer]
-   Open http://localhost:3000/index.html and sign in with admin / admin123.
+   Open https://sahaaya-grid.onrender.com/index.html and sign in with admin / admin123.
    Incident appears in real time under "Needs Attention" with HIGH priority.
    Click "SMART ASSIGN" -> System ranks Anjali (Medical match). Click "Dispatch Now".
 
 3. [Volunteer]
-   Open http://localhost:3000/volunteer.html and sign in with anjali / vol123.
+   Open https://sahaaya-grid.onrender.com/volunteer.html and sign in with anjali / vol123.
    30-second countdown timer alert pops up with incident details.
    Click "ACCEPT ASSIGNMENT" -> Status updates to ACCEPTED across all screens.
    Click "START RESPONSE" -> Status updates to ON SCENE (IN PROGRESS).
